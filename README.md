@@ -1,1 +1,3 @@
-@SocialSync
+# SocialSync
+
+A SocialMedia Management Tool
