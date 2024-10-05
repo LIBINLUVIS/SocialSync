@@ -1,0 +1,35 @@
+<div class="container d-flex align-items-center justify-content-center" style="min-height: 100vh;">
+  <div class="row w-100 justify-content-center">
+    <div class="col-md-6 col-lg-4">
+     
+     <div class="d-flex justify-content-center mb-2">
+        <h1 style="font-family: 'Roboto', sans-serif; font-weight: 700; color: #007bff; text-shadow: 2px 2px 4px rgba(0,0,0,0.1);" class="display-6 text-center mb-2">SocialSync</h1>
+     </div>
+      <div class="card shadow">
+        <div class="card-body">
+          <h2 class="card-title text-center mb-4">Sign in with your  account</h2>
+          <form>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter your email">
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" placeholder="Enter your password">
+            </div>
+            <div class="d-grid">
+              <button type="submit" class="btn btn-warning">Login</button>
+            </div>
+          </form>
+          <div class="mt-3 text-center">
+            <a  class="text-decoration-none" (click)="RedirectforgotPassword()" style="cursor: pointer;">Forgot password?</a>
+          </div>
+          <hr>
+          <div class="text-center">
+            <p>Don't have an account? <a (click)="RedirectSignup()" class="text-decoration-none" style="cursor: pointer;">Sign up</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
