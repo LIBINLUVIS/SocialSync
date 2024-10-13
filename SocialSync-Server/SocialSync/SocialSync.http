@@ -1,0 +1,6 @@
+@SocialSync_HostAddress = http://localhost:5187
+
+GET {{SocialSync_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

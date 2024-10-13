@@ -1,0 +1,16 @@
+C:\Users\Libin Luvis\Desktop\SocialSync\SocialSync-Server\SocialSyncDTO\bin\Debug\net8.0\SocialSyncDTO.deps.json
+C:\Users\Libin Luvis\Desktop\SocialSync\SocialSync-Server\SocialSyncDTO\bin\Debug\net8.0\SocialSyncDTO.dll
+C:\Users\Libin Luvis\Desktop\SocialSync\SocialSync-Server\SocialSyncDTO\bin\Debug\net8.0\SocialSyncDTO.pdb
+C:\Users\Libin Luvis\Desktop\SocialSync\SocialSync-Server\SocialSyncDTO\obj\Debug\net8.0\SocialSyncDTO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Libin Luvis\Desktop\SocialSync\SocialSync-Server\SocialSyncDTO\obj\Debug\net8.0\SocialSyncDTO.AssemblyInfoInputs.cache
+C:\Users\Libin Luvis\Desktop\SocialSync\SocialSync-Server\SocialSyncDTO\obj\Debug\net8.0\SocialSyncDTO.AssemblyInfo.cs
+C:\Users\Libin Luvis\Desktop\SocialSync\SocialSync-Server\SocialSyncDTO\obj\Debug\net8.0\SocialSyncDTO.csproj.CoreCompileInputs.cache
+C:\Users\Libin Luvis\Desktop\SocialSync\SocialSync-Server\SocialSyncDTO\obj\Debug\net8.0\SocialSyncDTO.sourcelink.json
+C:\Users\Libin Luvis\Desktop\SocialSync\SocialSync-Server\SocialSyncDTO\obj\Debug\net8.0\SocialSyncDTO.dll
+C:\Users\Libin Luvis\Desktop\SocialSync\SocialSync-Server\SocialSyncDTO\obj\Debug\net8.0\refint\SocialSyncDTO.dll
+C:\Users\Libin Luvis\Desktop\SocialSync\SocialSync-Server\SocialSyncDTO\obj\Debug\net8.0\SocialSyncDTO.pdb
+C:\Users\Libin Luvis\Desktop\SocialSync\SocialSync-Server\SocialSyncDTO\obj\Debug\net8.0\ref\SocialSyncDTO.dll
+C:\Users\Libin Luvis\Desktop\SocialSync\SocialSync-Server\SocialSyncDTO\bin\Debug\net8.0\SocialSyncData.dll
+C:\Users\Libin Luvis\Desktop\SocialSync\SocialSync-Server\SocialSyncDTO\bin\Debug\net8.0\SocialSyncData.pdb
+C:\Users\Libin Luvis\Desktop\SocialSync\SocialSync-Server\SocialSyncDTO\obj\Debug\net8.0\SocialSyncDTO.csproj.AssemblyReference.cache
+C:\Users\Libin Luvis\Desktop\SocialSync\SocialSync-Server\SocialSyncDTO\obj\Debug\net8.0\SocialSy.B0AA523B.Up2Date
