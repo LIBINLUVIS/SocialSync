@@ -40,6 +40,8 @@ namespace SocialSyncBusiness.Services
 
             var result = await _userManager.CreateAsync(user, model.Password);
 
+          
+
             if (result.Succeeded)
             {
                 await _signInManager.SignInAsync(user, isPersistent: false);
@@ -70,11 +72,6 @@ namespace SocialSyncBusiness.Services
                 return errormsg;
             }
 
-                    
-               
-
-         
-    
 
         }
 
