@@ -1,13 +1,24 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Azure.Core;
+using Coravel.Queuing.Interfaces;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Routing;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using SendGrid;
+using SendGrid.Helpers.Mail;
 using SocialSyncBusiness.IServices;
+using SocialSyncBusiness.Services.Queue;
+using SocialSyncData.Data;
 using SocialSyncData.Models;
 using SocialSyncDTO.DTOs;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,13 +29,18 @@ namespace SocialSyncBusiness.Services
 
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly IQueue _queue;
+        private readonly SocialSyncDataContext _dbContext;
 
-
-        public AccountService(UserManager<User> userManager, SignInManager<User> signInManager)
+        public AccountService(UserManager<User> userManager, SignInManager<User> signInManager, 
+            IHttpContextAccessor httpContextAccessor,IQueue queue, SocialSyncDataContext dbContext)
         {
             _userManager = userManager;
             _signInManager = signInManager;
-
+            _httpContextAccessor = httpContextAccessor;
+            _queue = queue;
+            _dbContext = dbContext;
         }
 
 
@@ -58,12 +74,12 @@ namespace SocialSyncBusiness.Services
         public async Task<string> SignInUser(UserLoginDto model)
         {
          
-                    var user = await _userManager.FindByNameAsync(model.Username);
-                    if (user != null && await _userManager.CheckPasswordAsync(user, model.Password))
-                    {
-                        var token = GenerateJwtToken(user);
-                return token;
-                    }
+          var user = await _userManager.FindByNameAsync(model.Username);
+          if (user != null && await _userManager.CheckPasswordAsync(user, model.Password))
+          {
+          var token = GenerateJwtToken(user);
+          return token;
+           }
 
             else
             {
@@ -75,6 +91,178 @@ namespace SocialSyncBusiness.Services
 
         }
 
+        public async Task<ServiceResult<string>> ForgotPassword(ForgotPasswordDto email)
+        {
+
+
+            //var client = new SendGridClient("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");
+            //var from = new EmailAddress("libin@socxo.com", "Libin Luvis");
+            //var to = new EmailAddress(email.Email);
+            //var emailMessage = MailHelper.CreateSingleEmail(from, to, "SocialSync", "Test Email Message", "");
+
+            //return response.StatusCode == System.Net.HttpStatusCode.Accepted;
+            var user = await _userManager.FindByEmailAsync(email.Email);
+            if (user == null)
+            {
+                return new ServiceResult<string>
+                {
+                    Data = null,
+                    Success = false,
+                    ErrorMessage = "User was not found",
+                    StatusCode = 404
+                };
+
+            }
+
+            var resetToken = await _userManager.GeneratePasswordResetTokenAsync(user);
+            //var resetLink = $"{_httpContextAccessor.HttpContext.Request.Scheme}://{_httpContextAccessor.HttpContext.Request.Host}/reset-password?token={resetToken}&email={email.Email}";
+            // generating a random code for password reset
+            string Code =  GeneraterandomCode();
+            //check the user is there or not and if not create a new record 
+            var user_record = await _dbContext.forgotpassword.Where(u => u.UserEmail == email.Email).SingleOrDefaultAsync();
+            if (user_record == null)
+            {
+                var user_record_obj = new Forgotpassword()
+                {
+                    UserEmail = email.Email,
+                    Code = Code,
+                    CreationTime = DateTime.UtcNow,
+                    ExpirationTime = DateTime.UtcNow.AddHours(1),
+                    Isverified = false
+                };
+
+                await _dbContext.forgotpassword.AddAsync(user_record_obj);
+                await _dbContext.SaveChangesAsync();
+            }
+            // else update the fields accordingly
+            else
+            {
+                user_record.Code = Code;
+                user_record.CreationTime = DateTime.UtcNow;
+                user_record.ExpirationTime = DateTime.UtcNow.AddHours(1);
+                user_record.Isverified = false;
+                
+                await _dbContext.SaveChangesAsync();
+            }
+
+         
+            
+            ResetPasswordDataDto restpassworddto = new ResetPasswordDataDto
+            {
+                ResetCode = Code,
+                Email = email.Email
+            };
+            //code is added to the queue then it sends through the mail
+            _queue.QueueInvocableWithPayload<ForgotPasswordInvocable, ResetPasswordDataDto>(restpassworddto);
+            return new ServiceResult<string>
+            {
+                Success = true,
+                Message = "Please check your Email!"
+            };
+
+        }
+
+        public async Task<ServiceResult<string>> VerifyCode(string email, string code)
+        {
+            //check the user is there or not 
+            var user_record = await _dbContext.forgotpassword.Where(u => u.UserEmail == email && u.Code == code).SingleOrDefaultAsync();
+            if (user_record == null)
+            {
+                return new ServiceResult<string>
+                {
+                    StatusCode = 404,
+                    Message = "User not found",
+                    Success = false
+                };
+            }
+            else
+            {
+                // check the code expiry time
+                bool Isexpired = user_record.ExpirationTime >= DateTime.UtcNow;
+                if (!Isexpired)
+                {
+                    return new ServiceResult<string>
+                    {
+                        StatusCode = 401,
+                        Message = "Code is expired",
+                        Success = false
+                    };
+                }
+                else
+                {
+                    user_record.Isverified = true;
+
+                    await _dbContext.SaveChangesAsync();
+
+                    return new ServiceResult<string>
+                    {
+                        StatusCode = 200,
+                        Message = "Code is Verified",
+                        Success = true
+                    };
+
+                    
+                }
+            
+            }
+                
+
+        }
+
+        public async Task<ServiceResult<string>> ResetPassword(string email,string newPassword)
+        {
+            var userobj = await _dbContext.forgotpassword.Where(u => u.UserEmail == email && u.Isverified == true).FirstOrDefaultAsync();
+            if(userobj != null)
+            {
+
+                // logic for password reset in identity
+                var user = await _userManager.FindByEmailAsync(email);
+
+                var resetToken = await _userManager.GeneratePasswordResetTokenAsync(user);
+               
+                var result = await _userManager.ResetPasswordAsync(user, resetToken, newPassword);
+
+                if (result.Succeeded)
+                {
+                    return new ServiceResult<string>
+                    {
+                        StatusCode = 200,
+                        Success = true,
+                        Message = "Password has reseted Successfully"
+                    };
+                }
+                else
+                {
+                    return new ServiceResult<string>
+                    {
+                        StatusCode = 400,
+                        Success = false,
+                        Message = "please check your new password, password reset went wrong"
+                    };
+                }
+
+            }
+            else 
+            {
+
+                return new ServiceResult<string>
+                {
+                    StatusCode = 404,
+                    Success = false,
+                    Message = "Invalid User or Not verified the Email"
+                };
+
+            }
+
+        }
+
+
+        private static string GeneraterandomCode()
+        {
+            Random random = new Random();
+            return string.Join("",Enumerable.Range(0,6).Select(_=> random.Next(0,10)));
+
+        }
 
         private string GenerateJwtToken(User user)
         {

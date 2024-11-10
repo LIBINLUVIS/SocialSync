@@ -20,12 +20,6 @@ namespace SocialSyncData.Data
             base.OnModelCreating(builder);
         }
 
-       
+        public DbSet<Forgotpassword> forgotpassword { get; set; }
     }
-
-    
-   
-    
-
- 
 }

@@ -11,5 +11,8 @@ namespace SocialSyncBusiness.IServices
     {
         Task<ServiceResult<bool>> SignupUser(UserRegisterDto model);
         Task<string> SignInUser(UserLoginDto model);
+        Task<ServiceResult<string>> ForgotPassword(ForgotPasswordDto email);
+        Task<ServiceResult<string>> VerifyCode(string email, string code);
+        Task<ServiceResult<string>> ResetPassword(string email, string newPassword);
     }
 }
