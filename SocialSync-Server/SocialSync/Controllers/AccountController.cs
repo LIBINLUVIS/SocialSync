@@ -7,6 +7,7 @@ using SocialSyncDTO.DTOs;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using Microsoft.AspNetCore.RateLimiting;
 
 namespace SocialSync.Controllers
 {
@@ -64,6 +65,55 @@ namespace SocialSync.Controllers
             var result = await _accountService.SignInUser(model);
 
             return Ok(result);
+        }
+        
+        [EnableRateLimiting("IPBasedOTPLimiter")]
+        [HttpPost("Forgotpassword")]
+        public async Task<IActionResult> ForgotPassword([FromBody] ForgotPasswordDto model)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = await _accountService.ForgotPassword(model);
+         
+                 return Ok(result);
+ 
+            }
+            else
+            {
+                return BadRequest(ModelState);
+            }
+
+        }
+        
+
+        [HttpGet("VerifyCode")]
+        public async Task<IActionResult> VerifyCode(string email, string code)
+        {
+            var result = await _accountService.VerifyCode(email, code);
+
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            else
+            {
+                return BadRequest(result);
+            }
+        }
+
+        [HttpPost("ResetPassword")]
+        public async Task<IActionResult> ResetPassword(string email,string newPassword)
+        {
+            var result = await _accountService.ResetPassword(email, newPassword);
+
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            else
+            {
+                return BadRequest(result);
+            }
         }
 
 
