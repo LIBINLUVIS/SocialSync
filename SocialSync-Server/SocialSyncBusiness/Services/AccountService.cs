@@ -93,14 +93,6 @@ namespace SocialSyncBusiness.Services
 
         public async Task<ServiceResult<string>> ForgotPassword(ForgotPasswordDto email)
         {
-
-
-            //var client = new SendGridClient("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");
-            //var from = new EmailAddress("libin@socxo.com", "Libin Luvis");
-            //var to = new EmailAddress(email.Email);
-            //var emailMessage = MailHelper.CreateSingleEmail(from, to, "SocialSync", "Test Email Message", "");
-
-            //return response.StatusCode == System.Net.HttpStatusCode.Accepted;
             var user = await _userManager.FindByEmailAsync(email.Email);
             if (user == null)
             {
