@@ -79,7 +79,8 @@ namespace SocialSyncBusiness.Services
           {
           var token = GenerateJwtToken(user);
           return token;
-           }
+          
+          }
 
             else
             {

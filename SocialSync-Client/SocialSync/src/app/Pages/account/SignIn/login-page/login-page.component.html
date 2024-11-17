@@ -8,17 +8,35 @@
       <div class="card shadow">
         <div class="card-body">
           <h2 class="card-title text-center mb-4">Sign in with your  account</h2>
-          <form>
+          <form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
             <div class="mb-3">
               <label for="email" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="email" placeholder="Enter your email">
+              <input type="email" class="form-control" id="email" placeholder="Enter your email" formControlName="email">
+
+              <div class="text-danger" *ngIf="signinForm.get('email')?.touched && signinForm.get('email')?.errors?.['required']">
+                Email is required
+              </div>
+              <div class="text-danger" *ngIf="signinForm.get('email')?.touched && signinForm.get('email')?.errors?.['email']">
+                Please enter a valid email
+              </div> 
             </div>
+
             <div class="mb-3">
               <label for="password" class="form-label">Password</label>
-              <input type="password" class="form-control" id="password" placeholder="Enter your password">
+              <input type="password" class="form-control" id="password" placeholder="Enter your password" formControlName="password">
+
+              <div class="text-danger" *ngIf="signinForm.get('password')?.touched && signinForm.get('password')?.errors?.['required']">
+                Password is required
+              </div>
             </div>
+
             <div class="d-grid">
-              <button type="submit" class="btn btn-warning">Login</button>
+              <button type="submit" class="btn btn-warning" *ngIf="!loading()">Login</button>
+
+              <div style="display: flex;justify-content: center;" *ngIf="loading()">
+                <div class="spinner-border spinner-border-sm text-primary " role="status"></div>
+              </div>
+
             </div>
           </form>
           <div class="mt-3 text-center">

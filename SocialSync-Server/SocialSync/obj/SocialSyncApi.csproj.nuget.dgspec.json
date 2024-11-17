@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lesle\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSync\\SocialSyncApi.csproj": {}
+    "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSync\\SocialSyncApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lesle\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\SocialSyncBusiness.csproj": {
+    "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\SocialSyncBusiness.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lesle\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\SocialSyncBusiness.csproj",
+        "projectUniqueName": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\SocialSyncBusiness.csproj",
         "projectName": "SocialSyncBusiness",
-        "projectPath": "C:\\Users\\lesle\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\SocialSyncBusiness.csproj",
+        "projectPath": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\SocialSyncBusiness.csproj",
         "packagesPath": "C:\\Users\\lesle\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lesle\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\obj\\",
+        "outputPath": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\lesle\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -22,18 +22,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\lesle\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\SocialSyncData.csproj": {
-                "projectPath": "C:\\Users\\lesle\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\SocialSyncData.csproj"
+              "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\SocialSyncData.csproj": {
+                "projectPath": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\SocialSyncData.csproj"
               },
-              "C:\\Users\\lesle\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\SocialSyncDTO.csproj": {
-                "projectPath": "C:\\Users\\lesle\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\SocialSyncDTO.csproj"
+              "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\SocialSyncDTO.csproj": {
+                "projectPath": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\SocialSyncDTO.csproj"
               }
             }
           }
@@ -86,18 +85,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\lesle\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\SocialSyncData.csproj": {
+    "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\SocialSyncData.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lesle\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\SocialSyncData.csproj",
+        "projectUniqueName": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\SocialSyncData.csproj",
         "projectName": "SocialSyncData",
-        "projectPath": "C:\\Users\\lesle\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\SocialSyncData.csproj",
+        "projectPath": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\SocialSyncData.csproj",
         "packagesPath": "C:\\Users\\lesle\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lesle\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\obj\\",
+        "outputPath": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\lesle\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -108,7 +107,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -163,18 +161,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\lesle\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\SocialSyncDTO.csproj": {
+    "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\SocialSyncDTO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lesle\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\SocialSyncDTO.csproj",
+        "projectUniqueName": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\SocialSyncDTO.csproj",
         "projectName": "SocialSyncDTO",
-        "projectPath": "C:\\Users\\lesle\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\SocialSyncDTO.csproj",
+        "projectPath": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\SocialSyncDTO.csproj",
         "packagesPath": "C:\\Users\\lesle\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lesle\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\obj\\",
+        "outputPath": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\lesle\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -185,15 +183,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\lesle\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\SocialSyncData.csproj": {
-                "projectPath": "C:\\Users\\lesle\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\SocialSyncData.csproj"
+              "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\SocialSyncData.csproj": {
+                "projectPath": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\SocialSyncData.csproj"
               }
             }
           }
@@ -228,18 +225,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\lesle\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSync\\SocialSyncApi.csproj": {
+    "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSync\\SocialSyncApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lesle\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSync\\SocialSyncApi.csproj",
+        "projectUniqueName": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSync\\SocialSyncApi.csproj",
         "projectName": "SocialSyncApi",
-        "projectPath": "C:\\Users\\lesle\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSync\\SocialSyncApi.csproj",
+        "projectPath": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSync\\SocialSyncApi.csproj",
         "packagesPath": "C:\\Users\\lesle\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lesle\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSync\\obj\\",
+        "outputPath": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSync\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\lesle\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -250,21 +247,20 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\lesle\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\SocialSyncBusiness.csproj": {
-                "projectPath": "C:\\Users\\lesle\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\SocialSyncBusiness.csproj"
+              "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\SocialSyncBusiness.csproj": {
+                "projectPath": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\SocialSyncBusiness.csproj"
               },
-              "C:\\Users\\lesle\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\SocialSyncData.csproj": {
-                "projectPath": "C:\\Users\\lesle\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\SocialSyncData.csproj"
+              "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\SocialSyncData.csproj": {
+                "projectPath": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\SocialSyncData.csproj"
               },
-              "C:\\Users\\lesle\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\SocialSyncDTO.csproj": {
-                "projectPath": "C:\\Users\\lesle\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\SocialSyncDTO.csproj"
+              "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\SocialSyncDTO.csproj": {
+                "projectPath": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\SocialSyncDTO.csproj"
               }
             }
           }
@@ -314,7 +310,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
