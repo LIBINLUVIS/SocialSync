@@ -47,7 +47,10 @@ builder.Services.AddIdentityCore<User>()
     .AddApiEndpoints();
 
 builder.Services.AddDbContext<SocialSyncDataContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
+builder.Services.AddCors((config => config.AddPolicy("AllowAll", builder =>
+{
+    builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader().AllowCredentials().WithOrigins("http://localhost:4200");
+})));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -56,7 +59,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseCors("AllowAll");
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

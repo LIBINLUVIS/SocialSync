@@ -1,33 +1,33 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\lesle\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSync\\",
+  "WorkspaceRootPath": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSync\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0721591F-4AFE-41C9-9A79-9858417738B9}|..\\SocialSyncData\\SocialSyncData.csproj|c:\\users\\lesle\\desktop\\socialsyncv1\\socialsync\\socialsync\\socialsync-server\\socialsyncdata\\migrations\\socialsyncdatacontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0C43021E-B2F4-4368-9928-743CF3A7BE6B}|..\\SocialSyncBusiness\\SocialSyncBusiness.csproj|c:\\users\\lesle\\onedrive\\desktop\\socialsyncv1\\socialsync\\socialsync\\socialsync-server\\socialsyncbusiness\\services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0721591F-4AFE-41C9-9A79-9858417738B9}|..\\SocialSyncData\\SocialSyncData.csproj|c:\\users\\lesle\\desktop\\socialsyncv1\\socialsync\\socialsync\\socialsync-server\\socialsyncdata\\data\\socialsyncdatacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D96EF78E-0784-4166-8ABB-E73C62951D4B}|SocialSyncApi.csproj|c:\\users\\lesle\\onedrive\\desktop\\socialsyncv1\\socialsync\\socialsync\\socialsync-server\\socialsync\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D96EF78E-0784-4166-8ABB-E73C62951D4B}|SocialSyncApi.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\lesle\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Migrations\\SocialSyncDataContextModelSnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\IServices\\IAccountService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D96EF78E-0784-4166-8ABB-E73C62951D4B}|SocialSyncApi.csproj|c:\\users\\lesle\\desktop\\socialsyncv1\\socialsync\\socialsync\\socialsync-server\\socialsync\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D96EF78E-0784-4166-8ABB-E73C62951D4B}|SocialSyncApi.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Models\\User.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D96EF78E-0784-4166-8ABB-E73C62951D4B}|SocialSyncApi.csproj|c:\\users\\lesle\\desktop\\socialsyncv1\\socialsync\\socialsync\\socialsync-server\\socialsync\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{D96EF78E-0784-4166-8ABB-E73C62951D4B}|SocialSyncApi.csproj|c:\\users\\lesle\\onedrive\\desktop\\socialsyncv1\\socialsync\\socialsync\\socialsync-server\\socialsync\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{D96EF78E-0784-4166-8ABB-E73C62951D4B}|SocialSyncApi.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D96EF78E-0784-4166-8ABB-E73C62951D4B}|SocialSyncApi.csproj|c:\\users\\lesle\\desktop\\socialsyncv1\\socialsync\\socialsync\\socialsync-server\\socialsync\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{D96EF78E-0784-4166-8ABB-E73C62951D4B}|SocialSyncApi.csproj|c:\\users\\lesle\\onedrive\\desktop\\socialsyncv1\\socialsync\\socialsync\\socialsync-server\\socialsync\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{D96EF78E-0784-4166-8ABB-E73C62951D4B}|SocialSyncApi.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D96EF78E-0784-4166-8ABB-E73C62951D4B}|SocialSyncApi.csproj|c:\\users\\lesle\\desktop\\socialsyncv1\\socialsync\\socialsync\\socialsync-server\\socialsync\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D96EF78E-0784-4166-8ABB-E73C62951D4B}|SocialSyncApi.csproj|c:\\users\\lesle\\onedrive\\desktop\\socialsyncv1\\socialsync\\socialsync\\socialsync-server\\socialsync\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D96EF78E-0784-4166-8ABB-E73C62951D4B}|SocialSyncApi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -86,6 +86,9 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\DTOs\\ServiceResult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\lesle\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Data\\SocialSyncDataContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -120,61 +123,71 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "SocialSyncDataContextModelSnapshot.cs",
-              "DocumentMoniker": "C:\\Users\\lesle\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Migrations\\SocialSyncDataContextModelSnapshot.cs",
-              "RelativeDocumentMoniker": "..\\SocialSyncData\\Migrations\\SocialSyncDataContextModelSnapshot.cs",
-              "ToolTip": "C:\\Users\\lesle\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Migrations\\SocialSyncDataContextModelSnapshot.cs",
-              "RelativeToolTip": "..\\SocialSyncData\\Migrations\\SocialSyncDataContextModelSnapshot.cs",
-              "ViewState": "AgIAAJcAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Title": "AccountService.cs",
+              "DocumentMoniker": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\Services\\AccountService.cs",
+              "RelativeDocumentMoniker": "..\\SocialSyncBusiness\\Services\\AccountService.cs",
+              "ToolTip": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\Services\\AccountService.cs",
+              "RelativeToolTip": "..\\SocialSyncBusiness\\Services\\AccountService.cs",
+              "ViewState": "AgIAAAYBAAAAAAAAAADwvwkBAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T07:43:10.497Z",
+              "WhenOpened": "2024-11-17T07:45:11.208Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
+              "Title": "SocialSyncDataContextModelSnapshot.cs",
+              "DocumentMoniker": "C:\\Users\\lesle\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Migrations\\SocialSyncDataContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Migrations\\SocialSyncDataContextModelSnapshot.cs",
+              "ToolTip": "C:\\Users\\lesle\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Migrations\\SocialSyncDataContextModelSnapshot.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Migrations\\SocialSyncDataContextModelSnapshot.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-10T07:43:10.497Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
               "Title": "SocialSyncDataContext.cs",
               "DocumentMoniker": "C:\\Users\\lesle\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Data\\SocialSyncDataContext.cs",
-              "RelativeDocumentMoniker": "..\\SocialSyncData\\Data\\SocialSyncDataContext.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Data\\SocialSyncDataContext.cs",
               "ToolTip": "C:\\Users\\lesle\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Data\\SocialSyncDataContext.cs",
-              "RelativeToolTip": "..\\SocialSyncData\\Data\\SocialSyncDataContext.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Data\\SocialSyncDataContext.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAAQwBcAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T07:42:06.486Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-10T07:42:06.486Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Models\\User.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Models\\User.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Models\\User.cs",
               "ToolTip": "C:\\Users\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Models\\User.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Models\\User.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Models\\User.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-03T14:05:23.193Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\Users\\lesle\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSync\\Controllers\\AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSync\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
-              "ToolTip": "C:\\Users\\lesle\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSync\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSync\\Controllers\\AccountController.cs",
               "RelativeToolTip": "Controllers\\AccountController.cs",
-              "ViewState": "AgIAAF4AAAAAAAAAAAAWwGwAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAADAAAAAAAAAAAIAwwEEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-12T07:49:55.612Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "IAccountService.cs",
               "DocumentMoniker": "C:\\Users\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\IServices\\IAccountService.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\IServices\\IAccountService.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\IServices\\IAccountService.cs",
               "ToolTip": "C:\\Users\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\IServices\\IAccountService.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\IServices\\IAccountService.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\IServices\\IAccountService.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-02T06:09:41.177Z"
             },
@@ -183,9 +196,9 @@
               "DocumentIndex": 18,
               "Title": "Forgotpassword.cs",
               "DocumentMoniker": "C:\\Users\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Models\\Forgotpassword.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Models\\Forgotpassword.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Models\\Forgotpassword.cs",
               "ToolTip": "C:\\Users\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Models\\Forgotpassword.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Models\\Forgotpassword.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Models\\Forgotpassword.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAswA8AAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-03T14:06:59.985Z"
@@ -195,9 +208,9 @@
               "DocumentIndex": 19,
               "Title": "SocialSyncDataContext.cs",
               "DocumentMoniker": "C:\\Users\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Data\\SocialSyncDataContext.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Data\\SocialSyncDataContext.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Data\\SocialSyncDataContext.cs",
               "ToolTip": "C:\\Users\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Data\\SocialSyncDataContext.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Data\\SocialSyncDataContext.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Data\\SocialSyncDataContext.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-03T14:10:40.085Z"
@@ -207,9 +220,9 @@
               "DocumentIndex": 20,
               "Title": "SendgridService.cs",
               "DocumentMoniker": "C:\\Users\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\Services\\SendgridService.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\Services\\SendgridService.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\Services\\SendgridService.cs",
               "ToolTip": "C:\\Users\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\Services\\SendgridService.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\Services\\SendgridService.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\Services\\SendgridService.cs",
               "ViewState": "AgIAADAAAAAAAAAAAAAYwD8AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-02T06:53:32.541Z"
@@ -219,9 +232,9 @@
               "DocumentIndex": 21,
               "Title": "ForgotPasswordInvocable.cs",
               "DocumentMoniker": "C:\\Users\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\Services\\Queue\\ForgotPasswordInvocable.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\Services\\Queue\\ForgotPasswordInvocable.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\Services\\Queue\\ForgotPasswordInvocable.cs",
               "ToolTip": "C:\\Users\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\Services\\Queue\\ForgotPasswordInvocable.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\Services\\Queue\\ForgotPasswordInvocable.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\Services\\Queue\\ForgotPasswordInvocable.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAAYwBAAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-02T06:57:24.61Z"
@@ -231,9 +244,9 @@
               "DocumentIndex": 22,
               "Title": "SocialSyncBusiness.csproj",
               "DocumentMoniker": "C:\\Users\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\SocialSyncBusiness.csproj",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\SocialSyncBusiness.csproj",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\SocialSyncBusiness.csproj",
               "ToolTip": "C:\\Users\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\SocialSyncBusiness.csproj",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\SocialSyncBusiness.csproj",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\SocialSyncBusiness.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2024-11-02T06:05:14.42Z"
@@ -242,9 +255,9 @@
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "appsettings.Development.json",
-              "DocumentMoniker": "C:\\Users\\lesle\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSync\\appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSync\\appsettings.Development.json",
               "RelativeDocumentMoniker": "appsettings.Development.json",
-              "ToolTip": "C:\\Users\\lesle\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSync\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSync\\appsettings.Development.json",
               "RelativeToolTip": "appsettings.Development.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
@@ -254,9 +267,9 @@
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\lesle\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSync\\appsettings.json",
+              "DocumentMoniker": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSync\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\lesle\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSync\\appsettings.json",
+              "ToolTip": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSync\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
@@ -267,9 +280,9 @@
               "DocumentIndex": 23,
               "Title": "ISendgridService.cs",
               "DocumentMoniker": "C:\\Users\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\IServices\\ISendgridService.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\IServices\\ISendgridService.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\IServices\\ISendgridService.cs",
               "ToolTip": "C:\\Users\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\IServices\\ISendgridService.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\IServices\\ISendgridService.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\IServices\\ISendgridService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-02T06:52:03.434Z"
@@ -279,9 +292,9 @@
               "DocumentIndex": 24,
               "Title": "ResetPasswordDataDto.cs",
               "DocumentMoniker": "C:\\Users\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\DTOs\\ResetPasswordDataDto.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\DTOs\\ResetPasswordDataDto.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\DTOs\\ResetPasswordDataDto.cs",
               "ToolTip": "C:\\Users\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\DTOs\\ResetPasswordDataDto.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\DTOs\\ResetPasswordDataDto.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\DTOs\\ResetPasswordDataDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-02T07:41:33.389Z"
@@ -290,9 +303,9 @@
               "$type": "Document",
               "DocumentIndex": 7,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\lesle\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSync\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSync\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\lesle\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSync\\Program.cs",
+              "ToolTip": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSync\\Program.cs",
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAABEAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -303,9 +316,9 @@
               "DocumentIndex": 25,
               "Title": "ForgotPasswordDto.cs",
               "DocumentMoniker": "C:\\Users\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\DTOs\\ForgotPasswordDto.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\DTOs\\ForgotPasswordDto.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\DTOs\\ForgotPasswordDto.cs",
               "ToolTip": "C:\\Users\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\DTOs\\ForgotPasswordDto.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\DTOs\\ForgotPasswordDto.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\DTOs\\ForgotPasswordDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-02T06:06:12.825Z"
@@ -315,9 +328,9 @@
               "DocumentIndex": 26,
               "Title": "ServiceResult.cs",
               "DocumentMoniker": "C:\\Users\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\DTOs\\ServiceResult.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\DTOs\\ServiceResult.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\DTOs\\ServiceResult.cs",
               "ToolTip": "C:\\Users\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\DTOs\\ServiceResult.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\DTOs\\ServiceResult.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\OneDrive\\Desktop\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\DTOs\\ServiceResult.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-02T06:12:51.356Z"
@@ -327,9 +340,9 @@
               "DocumentIndex": 8,
               "Title": "AccountService.cs",
               "DocumentMoniker": "C:\\Users\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\Services\\AccountService.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\Services\\AccountService.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\Services\\AccountService.cs",
               "ToolTip": "C:\\Users\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\Services\\AccountService.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\Services\\AccountService.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\Services\\AccountService.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-13T10:47:46.569Z"
             },
@@ -338,9 +351,9 @@
               "DocumentIndex": 11,
               "Title": "SocialSyncDTO.csproj",
               "DocumentMoniker": "C:\\Users\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\SocialSyncDTO.csproj",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\SocialSyncDTO.csproj",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\SocialSyncDTO.csproj",
               "ToolTip": "C:\\Users\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\SocialSyncDTO.csproj",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\SocialSyncDTO.csproj",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\SocialSyncDTO.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2024-10-12T15:41:36.086Z"
             },
@@ -349,9 +362,9 @@
               "DocumentIndex": 12,
               "Title": "UserLoginDto.cs",
               "DocumentMoniker": "C:\\Users\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\DTOs\\UserLoginDto.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\DTOs\\UserLoginDto.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\DTOs\\UserLoginDto.cs",
               "ToolTip": "C:\\Users\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\DTOs\\UserLoginDto.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\DTOs\\UserLoginDto.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\DTOs\\UserLoginDto.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-13T12:04:33.532Z"
             },
@@ -360,9 +373,9 @@
               "DocumentIndex": 10,
               "Title": "IAccountService.cs",
               "DocumentMoniker": "C:\\Users\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\IServices\\IAccountService.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\IServices\\IAccountService.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\IServices\\IAccountService.cs",
               "ToolTip": "C:\\Users\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\IServices\\IAccountService.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\IServices\\IAccountService.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\IServices\\IAccountService.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-13T10:46:56.136Z"
             },
@@ -371,9 +384,9 @@
               "DocumentIndex": 9,
               "Title": "ServiceResult.cs",
               "DocumentMoniker": "C:\\Users\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\DTOs\\ServiceResult.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\DTOs\\ServiceResult.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\DTOs\\ServiceResult.cs",
               "ToolTip": "C:\\Users\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\DTOs\\ServiceResult.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\DTOs\\ServiceResult.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\DTOs\\ServiceResult.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-13T10:53:17.581Z"
             },
@@ -382,9 +395,9 @@
               "DocumentIndex": 13,
               "Title": "UserRegisterDto.cs",
               "DocumentMoniker": "C:\\Users\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\DTOs\\UserRegisterDto.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\DTOs\\UserRegisterDto.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\DTOs\\UserRegisterDto.cs",
               "ToolTip": "C:\\Users\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\DTOs\\UserRegisterDto.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\DTOs\\UserRegisterDto.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncDTO\\DTOs\\UserRegisterDto.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-12T15:42:33.217Z"
             },
@@ -393,9 +406,9 @@
               "DocumentIndex": 14,
               "Title": "SocialSyncBusiness.csproj",
               "DocumentMoniker": "C:\\Users\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\SocialSyncBusiness.csproj",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\SocialSyncBusiness.csproj",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\SocialSyncBusiness.csproj",
               "ToolTip": "C:\\Users\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\SocialSyncBusiness.csproj",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\SocialSyncBusiness.csproj",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\SocialSyncBusiness.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2024-10-13T11:26:22.315Z"
             },
@@ -404,9 +417,9 @@
               "DocumentIndex": 15,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncData\\Models\\User.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncData\\Models\\User.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncData\\Models\\User.cs",
               "ToolTip": "C:\\Users\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncData\\Models\\User.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncData\\Models\\User.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncData\\Models\\User.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-12T09:14:41.134Z"
             },
@@ -415,9 +428,9 @@
               "DocumentIndex": 16,
               "Title": "SocialSyncDataContext.cs",
               "DocumentMoniker": "C:\\Users\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncData\\Data\\SocialSyncDataContext.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncData\\Data\\SocialSyncDataContext.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncData\\Data\\SocialSyncDataContext.cs",
               "ToolTip": "C:\\Users\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncData\\Data\\SocialSyncDataContext.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncData\\Data\\SocialSyncDataContext.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncData\\Data\\SocialSyncDataContext.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-12T08:35:39.134Z"
             },
@@ -426,9 +439,9 @@
               "DocumentIndex": 17,
               "Title": "20241012094507_12102024_Adding_UserColumn.cs",
               "DocumentMoniker": "C:\\Users\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncData\\Migrations\\20241012094507_12102024_Adding_UserColumn.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncData\\Migrations\\20241012094507_12102024_Adding_UserColumn.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncData\\Migrations\\20241012094507_12102024_Adding_UserColumn.cs",
               "ToolTip": "C:\\Users\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncData\\Migrations\\20241012094507_12102024_Adding_UserColumn.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncData\\Migrations\\20241012094507_12102024_Adding_UserColumn.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\Libin Luvis\\Desktop\\SocialSync\\SocialSync-Server\\SocialSyncData\\Migrations\\20241012094507_12102024_Adding_UserColumn.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-12T09:45:07.841Z"
             }

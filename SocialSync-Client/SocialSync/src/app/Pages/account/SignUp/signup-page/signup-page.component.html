@@ -1,0 +1,86 @@
+<div class="container d-flex align-items-center justify-content-center" style="min-height: 100vh;">
+    <div class="row w-100 justify-content-center">
+      <div class="col-md-6 col-lg-4">
+       
+       <div class="d-flex justify-content-center mb-2">
+          <h1 style="font-family: 'Roboto', sans-serif; font-weight: 700; color: #007bff; text-shadow: 2px 2px 4px rgba(0,0,0,0.1);" class="display-6 text-center mb-2">SocialSync</h1>
+       </div>
+        <div class="card shadow">
+          <div class="card-body">
+            <h2 class="card-title text-center mb-4">Sign up your account</h2>
+            <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+              <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email" formControlName="email">
+                <div class="text-danger" *ngIf="signupForm.get('email')?.touched && signupForm.get('email')?.errors?.['required']">
+                  Email is required
+                </div>
+                <div class="text-danger" *ngIf="signupForm.get('email')?.touched && signupForm.get('email')?.errors?.['email']">
+                  Please enter a valid email
+                </div> 
+
+              </div>
+              <div class="mb-3">
+                <label for="fname" class="form-label">User Name</label>
+                <input type="text" class="form-control" id="fname" placeholder="Enter user name" formControlName="username">
+                <div class="text-danger" *ngIf="signupForm.get('username')?.touched && signupForm.get('username')?.errors?.['required']">
+                  Username is required
+                </div> 
+              </div>
+
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Enter your password" formControlName="password">
+                <div class="text-danger" *ngIf="signupForm.get('password')?.touched && signupForm.get('password')?.errors?.['required']">
+                  Password is required
+                </div>
+                <div class="text-danger" *ngIf="signupForm.get('password')?.touched && signupForm.get('password')?.errors?.['minlength']">
+                  Password must be at least 6 characters
+                </div>
+                <div class="text-danger" *ngIf="signupForm.get('password')?.errors?.['passwordStrength']">
+                  Password must include an uppercase letter, a number, and a special character
+                </div>
+
+              </div> 
+              <div class="mb-3">
+                <label for="password" class="form-label">Confirm Password</label> 
+                <input type="password" class="form-control" id="password1" placeholder="Retype your password" formControlName="confirmPassword">
+                <div *ngIf="signupForm.get('confirmPassword')?.errors?.['passwordMismatch']" class="text-danger">
+                  Passwords do not match
+                </div>
+              </div>
+              <!-- <div class="mb-3">
+                <label for="country" class="form-label">Choose your country</label>
+                <select class="form-select" id="country" aria-label="Select your country">
+                  <option selected disabled value="">Select a country</option>
+                  <option value="US">United States</option>
+                  <option value="UK">United Kingdom</option>
+                  <option value="CA">Canada</option>
+                  <option value="AU">Australia</option>
+                  <option value="IN">India</option>
+                
+                </select>
+                <div class="text-danger" *ngIf="signupForm.get('country')?.touched && signupForm.get('country')?.errors?.['required']">
+                  Please select a country
+                </div>
+              </div> -->
+              <div class="d-grid">
+                <button type="submit" class="btn btn-warning" [disabled]="signupForm.invalid" *ngIf ="!loading()">
+                  Signup
+                </button>
+                <div style="display: flex;justify-content: center;" *ngIf = "loading()">
+                  <div class="spinner-border spinner-border-sm text-primary " role="status"></div>
+                </div>
+                
+              </div>
+            </form>
+
+            <hr>
+            <div class="text-center">
+              <p>have an account? <a (click)="RedirectSignIn()" class="text-decoration-none" style="cursor: pointer;">Login</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
