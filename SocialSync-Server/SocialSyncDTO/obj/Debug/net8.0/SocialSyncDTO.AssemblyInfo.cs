@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SocialSyncDTO")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+14bc9a0f935a3530f8f8ab3c6c6bcc5631591c0d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8f9f5db189ec729924442a05648c3e35258e589d")]
 [assembly: System.Reflection.AssemblyProductAttribute("SocialSyncDTO")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SocialSyncDTO")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
