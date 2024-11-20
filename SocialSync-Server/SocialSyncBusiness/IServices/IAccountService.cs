@@ -9,8 +9,8 @@ namespace SocialSyncBusiness.IServices
 {
     public interface IAccountService
     {
-        Task<ServiceResult<bool>> SignupUser(UserRegisterDto model);
-        Task<string> SignInUser(UserLoginDto model);
+        Task<ServiceResult<string>> SignupUser(UserRegisterDto model);
+        Task<ServiceResult<string>> SignInUser(UserLoginDto model);
         Task<ServiceResult<string>> ForgotPassword(ForgotPasswordDto email);
         Task<ServiceResult<string>> VerifyCode(string email, string code);
         Task<ServiceResult<string>> ResetPassword(string email, string newPassword);

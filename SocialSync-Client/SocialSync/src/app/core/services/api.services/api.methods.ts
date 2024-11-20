@@ -34,8 +34,8 @@ export class ApiMethods{
         customHeaders?:HttpHeaders):Observable<T>{
             const url = `${this.baseUrl}${endpoint}`;
             const options ={
-                Headers:customHeaders || this.defaultHeaders,
-                params:params ? new HttpParams({fromObject:params}):undefined
+              Headers: customHeaders || this.defaultHeaders,
+              params:params ? new HttpParams({fromObject:params}):undefined
             }
             return this.http.post<T>(url,body,options);
      }
