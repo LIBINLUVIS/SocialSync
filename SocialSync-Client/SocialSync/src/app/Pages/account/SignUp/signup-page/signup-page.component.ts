@@ -125,9 +125,15 @@ export class SignupPageComponent {
       if(!this.signupForm.invalid){
         this.formData.set(this.signupForm.value);
         this.loading.set(true);
-        this.accountService.signUp(this.formData()).subscribe(
+        const payload = {
+          UserName:this.signupForm.value['username'],
+          Email : this.signupForm.value['email'],
+          Password : this.signupForm.value['password']
+        }
+        this.accountService.signUp(payload).subscribe(
            {
             next: (response) => {
+              console.log(response);
               this.loading.set(false);
               this.formData.set(null);
               this.SuccessSnackBar("User Registered Successfully!");
@@ -135,10 +141,11 @@ export class SignupPageComponent {
             },
             error: (error) => {
               this.loading.set(false);
-              let error_msg = error.error.errors.DuplicateUserName[0];
-              if(error_msg){
-                this.openSnackBar(error_msg)
-              }else{
+              if(error!=null && error.error!=null && error.error.errors.DuplicateUserName[0]!=null){
+                 let error_msg = error.error.errors.DuplicateUserName[0];
+                 this.openSnackBar(error_msg)
+              }
+             else{
                 this.openSnackBar("Oops Something went wrong!");
               }
             },

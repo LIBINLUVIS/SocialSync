@@ -1,0 +1,5 @@
+<div class="card-body">
+    <countdown [config]="{ leftTime: 15, format: 'm:s' }" 
+    (event)="onTimerFinished($event)"
+    />
+</div>

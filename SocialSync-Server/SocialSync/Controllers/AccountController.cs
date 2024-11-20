@@ -34,7 +34,7 @@ namespace SocialSync.Controllers
 
 
 
-        [HttpPost("register")]
+        [HttpPost("userRegister")]
         public async Task<IActionResult> Register([FromBody] UserRegisterDto model)
         {
 
@@ -42,9 +42,10 @@ namespace SocialSync.Controllers
             {
                 var result = await _accountService.SignupUser(model);
 
+
                 if (result.Success)
                 {
-                    return Ok("User Registered Successfully.");
+                    return Ok(result);
                 }
                 else
                 {
@@ -53,20 +54,47 @@ namespace SocialSync.Controllers
             }
             else
             {
-                return BadRequest(ModelState);
+                return BadRequest("Model is invalid");
             }
 
             
         }
 
+       
+        //[HttpPost("userlogin")]
+        //public async Task<IActionResult> Login([FromBody] UserLoginDto model)
+        //{
+        //    var result = await _accountService.SignInUser(model);
+        //    return Ok(result);
+        //}
+
+        //[HttpPost("Userlogin")]
+        //public async Task<IActionResult> Login([FromBody] UserLoginDto model)
+        //{
+        //    var result = await _accountService.SignInUser(model);
+        //    return Ok(result);
+        //}
+
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] UserLoginDto model)
         {
-            var result = await _accountService.SignInUser(model);
-
-            return Ok(result);
+            if (ModelState.IsValid)
+            {
+                var result = await _accountService.SignInUser(model);
+                return Ok(result);
+            }
+            else
+            {
+                return BadRequest("Model is invalid");
+            }
         }
-        
+
+        [HttpGet("Test")]
+        public async Task<IActionResult> Fuck()
+        {
+            return Ok(new { message = "hello world" });
+        }
+
         [EnableRateLimiting("IPBasedOTPLimiter")]
         [HttpPost("Forgotpassword")]
         public async Task<IActionResult> ForgotPassword([FromBody] ForgotPasswordDto model)
@@ -75,7 +103,7 @@ namespace SocialSync.Controllers
             {
                 var result = await _accountService.ForgotPassword(model);
          
-                 return Ok(result);
+                return Ok(result);
  
             }
             else

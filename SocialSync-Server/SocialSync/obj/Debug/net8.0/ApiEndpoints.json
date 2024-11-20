@@ -33,22 +33,6 @@
   },
   {
     "ContainingType": "SocialSync.Controllers.AccountController",
-    "Method": "Register",
-    "RelativePath": "Account/register",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "model",
-        "Type": "SocialSyncDTO.DTOs.UserRegisterDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SocialSync.Controllers.AccountController",
     "Method": "ResetPassword",
     "RelativePath": "Account/ResetPassword",
     "HttpMethod": "POST",
@@ -64,6 +48,32 @@
         "Name": "newPassword",
         "Type": "System.String",
         "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SocialSync.Controllers.AccountController",
+    "Method": "Fuck",
+    "RelativePath": "Account/Test",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SocialSync.Controllers.AccountController",
+    "Method": "Register",
+    "RelativePath": "Account/userRegister",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "SocialSyncDTO.DTOs.UserRegisterDto",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []

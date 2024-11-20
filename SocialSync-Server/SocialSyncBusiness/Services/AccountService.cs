@@ -45,7 +45,7 @@ namespace SocialSyncBusiness.Services
 
 
 
-        public async Task<ServiceResult<bool>> SignupUser(UserRegisterDto model)
+        public async Task<ServiceResult<string>> SignupUser(UserRegisterDto model)
         {
             var user = new User
             {
@@ -62,31 +62,46 @@ namespace SocialSyncBusiness.Services
             {
                 await _signInManager.SignInAsync(user, isPersistent: false);
 
-                return new ServiceResult<bool> { Success = true };
+                return new ServiceResult<string> { Success = true,
+                    Message = "User created successfully.",
+                    StatusCode = 201
+                };
             }
             else
             {
-                return new ServiceResult<bool> { Success = false };
+                return new ServiceResult<string> { Success = false,
+                    Message = "Oops User not registered",
+                    StatusCode = 400
+                };
 
             }
         }
 
-        public async Task<string> SignInUser(UserLoginDto model)
+        public async Task<ServiceResult<string>> SignInUser(UserLoginDto model)
         {
          
-          var user = await _userManager.FindByNameAsync(model.Username);
-          if (user != null && await _userManager.CheckPasswordAsync(user, model.Password))
+          var user = await _userManager.FindByEmailAsync(model.email);
+          if (user != null && await _userManager.CheckPasswordAsync(user, model.password))
           {
           var token = GenerateJwtToken(user);
-          return token;
-          
+          return new ServiceResult<string>
+          {
+              Success = true,
+              Message = "User Login Successfully.",
+              StatusCode = 200,
+              Data = token  
+          };
+
           }
 
             else
             {
-                var errormsg = "Wrong Credentials";
-
-                return errormsg;
+                return new ServiceResult<string>
+                {
+                    Success = false,
+                    Message = "User Login failed",
+                    StatusCode = 402
+                };
             }
 
 
@@ -150,7 +165,8 @@ namespace SocialSyncBusiness.Services
             return new ServiceResult<string>
             {
                 Success = true,
-                Message = "Please check your Email!"
+                Message = "Please check your Email!",
+                StatusCode = 200
             };
 
         }
