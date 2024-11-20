@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "J/LqbA4LqmE=",
+  "dgSpecHash": "zjW4ccqwPPc=",
   "success": true,
-  "projectFilePath": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSync-Server\\SocialSyncBusiness\\SocialSyncBusiness.csproj",
+  "projectFilePath": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\SocialSyncBusiness.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lesle\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\lesle\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
