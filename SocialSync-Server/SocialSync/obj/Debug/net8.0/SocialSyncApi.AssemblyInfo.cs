@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SocialSyncApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4d2546f125cb4a14cd2a974eade44b648d432c1c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5fa9abe489401119456906fd718f5d936772e1b4")]
 [assembly: System.Reflection.AssemblyProductAttribute("SocialSyncApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SocialSyncApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
