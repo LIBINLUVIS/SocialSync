@@ -47,6 +47,7 @@ export class LoginPageComponent {
 
   SuccessSnackBar(message: string) {
     this.snackBar.open(message, 'close', {
+      duration: 2000, 
       verticalPosition: 'top',
       horizontalPosition: 'center',
     });
@@ -67,6 +68,7 @@ export class LoginPageComponent {
             this.formData.set(null);
             if(response.data!=null && response.statusCode == 200){
               this.SuccessSnackBar('Login Success.')
+              this.router.navigate(['/home'])
             }else if(response.statusCode == 402){
               this.ErrorSnackBar('Please check your username and password.');
             }

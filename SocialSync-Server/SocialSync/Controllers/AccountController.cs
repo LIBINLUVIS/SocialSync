@@ -118,15 +118,7 @@ namespace SocialSync.Controllers
         public async Task<IActionResult> VerifyCode(string email, string code)
         {
             var result = await _accountService.VerifyCode(email, code);
-
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-            else
-            {
-                return BadRequest(result);
-            }
+            return Ok(result);
         }
 
         [HttpPost("ResetPassword")]

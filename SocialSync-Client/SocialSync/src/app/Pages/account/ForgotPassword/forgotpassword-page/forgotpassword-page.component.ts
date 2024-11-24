@@ -5,6 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { OtpTimerComponent } from '../../../../components/otp-timer/OTPTimer/otp-timer.component';
 import { ApiAccountService } from '../../../../core/services/api.services/api.account.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Route, Router } from '@angular/router';
 
 
 
@@ -24,8 +25,14 @@ export class ForgotpasswordPageComponent implements OnInit {
   isSubmitting: boolean = false;
   formData = signal<any>(null);
   IsresendCode = signal<boolean>(false);
+  timerReset:boolean = false;
+  IsverificationbtnDisabled:boolean = false;
+  loadingbtn1:boolean = false
+  loadingbtn2:boolean = false
+  loadingbtn3:boolean = false
 
-  constructor(private formBuilder:FormBuilder,private accountService:ApiAccountService,private snackBar: MatSnackBar){
+  constructor(private formBuilder:FormBuilder,private accountService:ApiAccountService
+    ,private snackBar: MatSnackBar,private router:Router){
     this.forgotpasswordForm = this.formBuilder.group({
       Email: ['', [Validators.required, Validators.email]],
     })
@@ -39,6 +46,14 @@ export class ForgotpasswordPageComponent implements OnInit {
 
   SuccessSnackBar(message: string) {
     this.snackBar.open(message, 'close', {
+      duration: 2000, 
+      verticalPosition: 'top',
+      horizontalPosition: 'center',
+    });
+  }
+
+  ErrorSnackBar(message: string) {
+    this.snackBar.open(message, '❌', {
       verticalPosition: 'top',
       horizontalPosition: 'center',
     });
@@ -46,26 +61,56 @@ export class ForgotpasswordPageComponent implements OnInit {
 
   TimerEvent(message:boolean){
     if(message){
+      this.timerReset = false;
       this.IsresendCode.set(true);
     }
+  }
+
+  resetTimer(){
+    this.timerReset = true;
+    this.IsresendCode.set(false);
+    this.loadingbtn2=true
+    this.accountService.forgotPassword(this.formData()).subscribe(
+      success =>{
+        console.log(success);
+        if(success.statusCode == 200){
+          this.loadingbtn2=false
+          this.SuccessSnackBar('OTP resented successfully!')
+          this.isverificationCode = true
+          this.isSubmitting = true
+        }
+      },
+      error=>{
+        this.loadingbtn2=false
+        this.ErrorSnackBar('Oops Something went wrong!')
+      }
+    )
   }
 
   sendemailVerification(){
     if(this.forgotpasswordForm.valid){
       this.formData.set(this.forgotpasswordForm.value)
       this.forgotpasswordForm.get('Email')?.disable();
+      this.loadingbtn1 = true;
       this.accountService.forgotPassword(this.formData()).subscribe(
         success =>{
           console.log(success);
           if(success.statusCode == 200){
             this.SuccessSnackBar('please check your Email.')
-            this.forgotpasswordForm.reset();
+            // this.forgotpasswordForm.reset();
+            this.loadingbtn1=false
+            this.IsverificationbtnDisabled = true;
             this.isverificationCode = true
             this.isSubmitting = true
           }
+          if(success.statusCode == 404){
+            this.loadingbtn1=false
+            this.ErrorSnackBar('User is not registered with this Email.')
+          }
         },
         error=>{
-          console.log(error);
+          this.loadingbtn1=false
+          this.ErrorSnackBar('Oops Something went wrong!')
         }
       )
       // this.isverificationCode = true;
@@ -77,7 +122,47 @@ export class ForgotpasswordPageComponent implements OnInit {
 
   verifyingCode(){
      if(this.verifycodeForm.valid){
-      window.location.href = '/resetpassword';
+     let code = this.verifycodeForm.value?.Code;
+     let email = this.forgotpasswordForm.value?.Email;
+     this.loadingbtn3=true
+     this.accountService.verifyCode(email
+      ,code).subscribe(
+     {
+      next:(response)=>{
+        const statusCode = Number(response.statusCode);
+        console.log(statusCode)
+         switch(statusCode){
+          case 200:
+            this.loadingbtn3=false
+            this.SuccessSnackBar('OTP Verified!')
+            const queryParams ={
+              Email:email
+            }
+            this.router.navigate(['resetpassword'],{
+              queryParams:queryParams
+            })
+            break
+          case 404:
+            this.loadingbtn3=false
+            this.ErrorSnackBar('Incorrect OTP')
+            break
+          case 401:
+            this.loadingbtn3=false
+            this.ErrorSnackBar('OTP Expired,Resend OTP')
+            break
+          default:
+            this.loadingbtn3=false
+            this.ErrorSnackBar('Oops Something went wrong!')
+
+         }
+
+      },error:(err)=> {
+        this.loadingbtn3=false
+        this.ErrorSnackBar('Oops Something went wrong!')
+      },
+     }
+     )
+      // window.location.href = '/resetpassword';
      }
   }
 
