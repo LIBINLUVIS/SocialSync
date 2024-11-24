@@ -59,6 +59,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.Use(async (context, next) =>
+{
+    context.Response.Headers["Cache-Control"] = "no-cache, no-store";
+    context.Response.Headers["Pragma"] = "no-cache";
+    await next();
+});
 app.UseCors("AllowAll");
 app.UseHttpsRedirection();
 
