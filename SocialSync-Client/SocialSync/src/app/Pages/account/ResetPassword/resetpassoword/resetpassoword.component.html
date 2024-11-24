@@ -12,14 +12,29 @@
               <div class="mb-3">
                 <label for="password" class="form-label">Enter New Password</label>
                 <input formControlName="newpassword" type="password" class="form-control" id="newpassword" placeholder="Enter New Password">
+                <div class="text-danger" *ngIf="resetpasswordForm.get('newpassword')?.touched && resetpasswordForm.get('newpassword')?.errors?.['required']">
+                  Password is required
+                </div>
+                <div class="text-danger" *ngIf="resetpasswordForm.get('newpassword')?.touched && resetpasswordForm.get('newpassword')?.errors?.['minlength']">
+                  Password must be at least 6 characters
+                </div>
+                <div class="text-danger" *ngIf="resetpasswordForm.get('newpassword')?.errors?.['passwordStrength']">
+                  Password must include an uppercase letter, a number, and a special character
+                </div>
               </div>
               <div class="mb-3">
                 <label for="retypepassword" class="form-label">Retype Password</label>
-                <input  type="password" class="form-control" id="retypepassword" placeholder="Retype Password">
+                <input formControlName="confirmPassword" type="password" class="form-control" id="retypepassword" placeholder="Retype Password">
+                <div *ngIf="resetpasswordForm.get('confirmPassword')?.errors?.['passwordMismatch']" class="text-danger">
+                  Passwords do not match
+                </div>
               </div>
 
               <div class="d-grid">
-                <button type="submit" class="btn btn-warning">Reset Password</button>
+                <button type="submit" class="btn btn-warning" *ngIf="!loading">Reset Password</button>
+                <div style="display: flex;justify-content: center;" *ngIf="loading">
+                  <div class="spinner-border spinner-border-sm text-primary " role="status"></div>
+                </div>
               </div>
             </form>
             <hr>

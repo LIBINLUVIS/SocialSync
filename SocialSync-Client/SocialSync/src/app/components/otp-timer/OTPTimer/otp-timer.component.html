@@ -1,5 +1,6 @@
 <div class="card-body">
-    <countdown [config]="{ leftTime: 15, format: 'm:s' }" 
+    <span>Resend OTP in : </span>
+    <countdown #countdown [config]="{ leftTime: 15, format: 'm:s' }" 
     (event)="onTimerFinished($event)"
     />
 </div>
