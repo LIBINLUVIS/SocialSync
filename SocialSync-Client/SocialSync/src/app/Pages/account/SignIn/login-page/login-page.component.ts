@@ -9,6 +9,7 @@ import {
 import { CommonModule } from '@angular/common';
 import { ApiAccountService } from '../../../../core/services/api.services/api.account.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { AuthService } from '../../../../core/services/AuthServices/AuthService';
 
 @Component({
   selector: 'app-login-page',
@@ -26,7 +27,8 @@ export class LoginPageComponent {
     private router: Router,
     private fb: FormBuilder,
     private accountService: ApiAccountService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private authService:AuthService
   ) {
     this.initForm();
   }
@@ -68,7 +70,8 @@ export class LoginPageComponent {
             this.formData.set(null);
             if(response.data!=null && response.statusCode == 200){
               this.SuccessSnackBar('Login Success.')
-              this.router.navigate(['/home'])
+              this.authService.setToken(response.data)
+              this.router.navigate(['home'])
             }else if(response.statusCode == 402){
               this.ErrorSnackBar('Please check your username and password.');
             }
