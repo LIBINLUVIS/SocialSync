@@ -1,5 +1,16 @@
-<p>home works!</p>
 
-<div *ngIf="isUserAuth">
-    User Authenticated
-</div>
+<div class="home-container d-flex flex-column justify-content-center align-items-center vh-100">
+    <app-header [userName]="userName"></app-header>
+  
+    <div class="typing-container text-center">
+      <p class="welcome-text">{{ displayedText }}</p>
+      <p class="new-text">{{ newtext }}</p>
+      <button *ngIf="isTextComplete && isnextTextComplete" (click)="onButtonClick()" class="btn btn-primary">
+        Explore
+      </button>
+    </div>
+  </div>
+  
+  
+
+

@@ -21,5 +21,6 @@ namespace SocialSyncData.Data
         }
 
         public DbSet<Forgotpassword> forgotpassword { get; set; }
+        public DbSet<Useraccount> useraccount { get; set; }
     }
 }
