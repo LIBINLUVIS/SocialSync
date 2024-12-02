@@ -1,18 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../../core/services/AuthServices/AuthService';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { HeaderComponent } from '../../../Layouts/header/header.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,HeaderComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit{
  
  isUserAuth:boolean = false;
+ userName:string = "";
+ text: string = 'Welcome to Your Ultimate Social Media Management Tool! 🌟';
+ startText:string = 'SocialSync 🚀' 
+ newtext:string = '';
+ displayedText: string = '';    
+ typingSpeed: number = 80;
+ isTextComplete: boolean = false;
+ isnextTextComplete :boolean = false;
 
  constructor(
   private authService:AuthService,
@@ -22,13 +31,53 @@ export class HomeComponent {
 
  ngOnInit(){
    
-   this.authService.loadTokenFromSession();
+ var userName = this.authService.getUserProfile();
+ if(userName){
+  this.userName = userName
+ }else{
+  this.userName = ""
+ }
 
-   this.isUserAuth = this.authService.isAuthenticated();
+ this.startTyping();
 
-   if(!this.isUserAuth){
-    this.router.navigate(['login'])
-   }
 
  }
+
+
+ startTyping() {
+  let index = 0;
+  const interval = setInterval(() => {
+    if (index < this.text.length) {
+      this.displayedText += this.text.charAt(index);
+      index++;
+    } else {
+      this.isTextComplete = true;
+      clearInterval(interval);
+      this.startTypeingnxtText() // Stop interval when done
+    }
+  }, this.typingSpeed);
+
+
 }
+
+startTypeingnxtText(){
+  let index = 0;
+  const interval = setInterval(() => {
+    if (index < this.startText.length) {
+      this.newtext += this.startText.charAt(index);
+      index++;
+    } else {
+      this.isnextTextComplete = true;
+      clearInterval(interval); // Stop interval when done
+    }
+  }, this.typingSpeed);
+}
+
+onButtonClick() {
+  alert('Button clicked! You can now navigate or perform any action.');
+}
+
+}
+
+
+

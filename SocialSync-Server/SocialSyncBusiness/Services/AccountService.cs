@@ -81,9 +81,33 @@ namespace SocialSyncBusiness.Services
         {
          
           var user = await _userManager.FindByEmailAsync(model.email);
+          
           if (user != null && await _userManager.CheckPasswordAsync(user, model.password))
           {
           var token = GenerateJwtToken(user);
+          if (token != null)
+          {
+              var Isuseraccount = await _dbContext.useraccount.Where(u => u.UserId == user.Id).FirstOrDefaultAsync();
+              if (Isuseraccount != null)
+              {
+                  Isuseraccount.AuthToken = token;
+                  Isuseraccount.TokenExpiry = DateTime.Now.AddHours(1);
+                  await _dbContext.SaveChangesAsync();
+
+              }
+              else
+              {
+              var useraccountObj = new Useraccount()
+              {
+                  AuthToken = token,
+                  CreatedDate = DateTime.Now,
+                  TokenExpiry = DateTime.Now.AddHours(1),
+                  UserId = user.Id
+              };
+              await _dbContext.useraccount.AddAsync(useraccountObj);
+              await _dbContext.SaveChangesAsync();
+          }
+          }
           return new ServiceResult<string>
           {
               Success = true,

@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { OtpTimerComponent } from './components/otp-timer/OTPTimer/otp-timer.component';
 import { ApiAccountService } from './core/services/api.services/api.account.service';
+import { AuthService } from './core/services/AuthServices/AuthService';
+
 
 @Component({
   selector: 'app-root',
@@ -12,13 +14,19 @@ import { ApiAccountService } from './core/services/api.services/api.account.serv
 })
 export class AppComponent {
   title = 'SocialSync';
-  
-  constructor(private http:ApiAccountService){}
+
+  isUserAuth:boolean = false;
+
+  constructor(private authService:AuthService,private router:Router){}
+
   ngOnInit(){
-    this.http.test().subscribe(
-      success =>{
-        console.log(success);
-      }
-    )
+
+    this.authService.loadTokenFromSession();
+   
+    this.isUserAuth = this.authService.isAuthenticated();
+ 
+    if(!this.isUserAuth){
+     this.router.navigate(['login'])
+    }
   }
 }
