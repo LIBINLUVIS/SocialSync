@@ -12,15 +12,19 @@ using System.Threading.RateLimiting;
 using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.Extensions.Options;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 
+// Add services to the container.
+/*builder.Services.AddSignalR();*/
 builder.Services.AddQueue();
 builder.Services.AddScoped<ForgotPasswordInvocable>();
 builder.Services.AddControllers();
 builder.Services.AddScoped<IAccountService,AccountService>();
 builder.Services.AddScoped<ISendgridService, SendgridService>();
+builder.Services.AddScoped<ISocialService, SocialService>();
+
 
 builder.Services.AddRateLimiter(policy =>
 {
@@ -51,6 +55,9 @@ builder.Services.AddCors((config => config.AddPolicy("AllowAll", builder =>
 {
     builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader().AllowCredentials().WithOrigins("http://localhost:4200");
 })));
+builder.Services.AddHttpContextAccessor();
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -73,7 +80,7 @@ app.UseAuthorization();
 app.UseRateLimiter();
 
 app.MapControllers();
-
+/*app.MapHub<NotificationService>("/notify");*/
 app.MapIdentityApi<User>();
 
 app.Run();

@@ -1,11 +1,11 @@
 
 <div class="home-container d-flex flex-column justify-content-center align-items-center vh-100">
-    <app-header [userName]="userName"></app-header>
+    <app-header [userName]="userName" #headerComp></app-header>
   
     <div class="typing-container text-center">
       <p class="welcome-text">{{ displayedText }}</p>
       <p class="new-text">{{ newtext }}</p>
-      <button *ngIf="isTextComplete && isnextTextComplete" (click)="onButtonClick()" class="btn btn-primary">
+      <button *ngIf="isTextComplete && isnextTextComplete" (click)="onButtonClick()" class="btn btn-warning">
         Explore
       </button>
     </div>

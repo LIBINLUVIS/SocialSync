@@ -136,6 +136,43 @@ namespace SocialSync.Controllers
             }
         }
 
+        [HttpGet("GetUserId")]
+        public async Task<IActionResult> GetUserId(string userId)
+        {
+            
+            var res = await _accountService.GetUserId(userId);
+            if (res.Success)
+            {
+                return Ok(res);
+            }
+            else
+            {
+                return BadRequest(res);
+            }
+        }
+
+        [HttpGet("SocialConnectionStatus")]
+        public async Task<IActionResult> GetSocialConnectionStatus(string userId)
+        {
+            var res = await _accountService.GetSocialConnectionStatus(userId);
+            return Ok(res);
+        }
+
+        [HttpPost("DisconnectSocialaccount")]
+        public async Task<IActionResult> DisconnectSocial(int userId,string Provider)
+        {
+            bool res =await _accountService.DissconnectSocialAccount(userId,Provider);
+
+            if (res)
+            {
+                return Ok(new { message = "Disconnect successfully!" });
+            }
+            else
+            {
+                return BadRequest(new { message = "Something went wrong" });
+            }
+        }
+
 
 
 

@@ -12,8 +12,8 @@ using SocialSyncData.Data;
 namespace SocialSyncData.Migrations
 {
     [DbContext(typeof(SocialSyncDataContext))]
-    [Migration("20241202082545_2024212_column_datatype_changed_Useraccount")]
-    partial class _2024212_column_datatype_changed_Useraccount
+    [Migration("20241217160812_initial_migration_17122024")]
+    partial class initial_migration_17122024
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -188,6 +188,41 @@ namespace SocialSyncData.Migrations
                     b.ToTable("forgotpassword");
                 });
 
+            modelBuilder.Entity("SocialSyncData.Models.SocialAccount", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<string>("AccessToken")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("AccessTokenExpiry")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Provider")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UserAccountId")
+                        .HasColumnType("int");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("UserAccountId");
+
+                    b.ToTable("socialaccount");
+                });
+
             modelBuilder.Entity("SocialSyncData.Models.User", b =>
                 {
                     b.Property<string>("Id")
@@ -329,6 +364,22 @@ namespace SocialSyncData.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("SocialSyncData.Models.SocialAccount", b =>
+                {
+                    b.HasOne("SocialSyncData.Models.Useraccount", "Useraccount")
+                        .WithMany("SocialAccounts")
+                        .HasForeignKey("UserAccountId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Useraccount");
+                });
+
+            modelBuilder.Entity("SocialSyncData.Models.Useraccount", b =>
+                {
+                    b.Navigation("SocialAccounts");
                 });
 #pragma warning restore 612, 618
         }
