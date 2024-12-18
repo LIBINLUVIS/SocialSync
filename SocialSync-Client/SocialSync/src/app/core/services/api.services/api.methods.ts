@@ -35,6 +35,28 @@ export class ApiMethods{
     
         return this.http.get<T>(url, options);
       }
+
+
+      // getauth<T>(
+      //   endpoint: string,
+      //   params?: { key:string,value:string }[],
+      //   customHeaders?: HttpHeaders
+      // ): Observable<T> {
+      //   let httpParams = new HttpParams();
+      //   if (params) {
+      //     params.forEach(param => {
+      //         httpParams = httpParams.set(param.key, param.value);
+      //     });
+      // }
+      //   const url = `${endpoint}`;
+      //   const options = {
+      //     headers: customHeaders || this.defaultHeaders,
+      //     params: params ? httpParams  : undefined,
+      //     withCredentials: true 
+      //   };
+    
+      //   return this.http.get<T>(url, options);
+      // }
       
     post<T>(endpoint:string,body:any,params?:{key:string,value:string}[],
         customHeaders?:HttpHeaders):Observable<T>{

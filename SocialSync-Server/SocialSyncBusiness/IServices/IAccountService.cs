@@ -14,5 +14,8 @@ namespace SocialSyncBusiness.IServices
         Task<ServiceResult<string>> ForgotPassword(ForgotPasswordDto email);
         Task<ServiceResult<string>> VerifyCode(string email, string code);
         Task<ServiceResult<string>> ResetPassword(string email, string newPassword);
+        Task<ServiceResult<int>> GetUserId(string userId);
+        Task<IEnumerable<Dictionary<string,string>>> GetSocialConnectionStatus(string userId);
+        Task<bool> DissconnectSocialAccount(int userId,string Provider);
     }
 }

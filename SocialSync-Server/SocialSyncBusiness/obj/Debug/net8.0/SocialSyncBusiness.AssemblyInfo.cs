@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SocialSyncBusiness")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fe3a607fa2fe3892e3a9563f25b7f9cbd6683f89")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dbf0065af553cf3f5658a2288f6dd488a065fe11")]
 [assembly: System.Reflection.AssemblyProductAttribute("SocialSyncBusiness")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SocialSyncBusiness")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

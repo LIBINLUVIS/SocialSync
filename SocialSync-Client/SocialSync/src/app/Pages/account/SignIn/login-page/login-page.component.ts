@@ -59,7 +59,6 @@ export class LoginPageComponent {
     if (!this.signinForm.invalid) {
       this.formData.set(this.signinForm.value);
 
-      console.log(this.formData());
 
       if (this.formData()) {
         this.loading.set(true);

@@ -17,6 +17,22 @@
   },
   {
     "ContainingType": "SocialSync.Controllers.AccountController",
+    "Method": "GetUserId",
+    "RelativePath": "Account/GetUserId",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SocialSync.Controllers.AccountController",
     "Method": "Login",
     "RelativePath": "Account/login",
     "HttpMethod": "POST",
@@ -46,6 +62,27 @@
       },
       {
         "Name": "newPassword",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SocialSync.Controllers.AccountController",
+    "Method": "GetSocialConnectionStatus",
+    "RelativePath": "Account/SocialConnectionStatus",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Provider",
         "Type": "System.String",
         "IsRequired": false
       }
@@ -400,5 +437,26 @@
         "StatusCode": 400
       }
     ]
+  },
+  {
+    "ContainingType": "SocialSync.Controllers.SocialController",
+    "Method": "GetLinkedinAccessToken",
+    "RelativePath": "Social/LinkedinAccessToken",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "authCode",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "accountUserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { AuthService } from '../../../core/services/AuthServices/AuthService';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
@@ -22,6 +22,8 @@ export class HomeComponent implements OnInit{
  typingSpeed: number = 80;
  isTextComplete: boolean = false;
  isnextTextComplete :boolean = false;
+
+ @ViewChild('headerComp', { static: false }) headerComp!: HeaderComponent;
 
  constructor(
   private authService:AuthService,
@@ -74,7 +76,7 @@ startTypeingnxtText(){
 }
 
 onButtonClick() {
-  alert('Button clicked! You can now navigate or perform any action.');
+  this.headerComp.openOffcanvas();
 }
 
 }

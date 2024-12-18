@@ -1,5 +1,5 @@
 const variables = {
-   baseUrl : "https://localhost:44396/Account/"
-} 
+   baseUrl : "http://localhost:5187"
+}  
 
 export default variables;

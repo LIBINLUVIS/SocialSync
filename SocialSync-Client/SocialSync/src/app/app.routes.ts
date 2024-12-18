@@ -31,6 +31,12 @@ export const routes: Routes = [
     loadComponent:()=>import('./Pages/home/home/home.component').then(m=>m.HomeComponent),
     canActivate:[AuthGuard]
   },
+  {
+    path:'accounts',
+    loadComponent:()=>import('./Pages/social/account-connect/account-connect.component').then(m=>m.AccountConnectComponent),
+    canActivate:[AuthGuard]
+
+  }
 
 
 ];

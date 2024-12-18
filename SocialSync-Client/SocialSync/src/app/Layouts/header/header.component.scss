@@ -1,0 +1,25 @@
+/* Apply custom background color to the button */
+.custom-toggler {
+    background-color:#007bff; /* Example: Green */
+    border-color: #007bff; /* Optional: Match border with background */
+  }
+  
+  /* Customize the icon inside the button */
+  .custom-toggler .navbar-toggler-icon {
+    
+    /* Replace with your custom icon if needed */
+    filter: brightness(0) invert(1); /* Optional: Makes the default icon white */
+  }
+   
+ .navbar-toggler:focus{
+  outline: none !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+ }
+  /* Focus or active state */
+  .custom-toggler:focus, .custom-toggler:active {
+    outline: none !important;
+    text-decoration: none !important;
+    // box-shadow: 0 0 0 0.2rem rgba(76, 175, 80, 0.5); /* Optional shadow for focus */
+  }
+  

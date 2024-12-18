@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace SocialSyncData.Migrations
 {
     /// <inheritdoc />
-    public partial class _12102024_Adding_UserColumn : Migration
+    public partial class initial_migration_17122024 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -48,6 +48,39 @@ namespace SocialSyncData.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "forgotpassword",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserEmail = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Code = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CreationTime = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ExpirationTime = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Isverified = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_forgotpassword", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "useraccount",
+                columns: table => new
+                {
+                    id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserId = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    AuthToken = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    TokenExpiry = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_useraccount", x => x.id);
                 });
 
             migrationBuilder.CreateTable(
@@ -156,6 +189,30 @@ namespace SocialSyncData.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "socialaccount",
+                columns: table => new
+                {
+                    id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Provider = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    AccessToken = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    AccessTokenExpiry = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UserAccountId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_socialaccount", x => x.id);
+                    table.ForeignKey(
+                        name: "FK_socialaccount_useraccount_UserAccountId",
+                        column: x => x.UserAccountId,
+                        principalTable: "useraccount",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -194,6 +251,11 @@ namespace SocialSyncData.Migrations
                 column: "NormalizedUserName",
                 unique: true,
                 filter: "[NormalizedUserName] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_socialaccount_UserAccountId",
+                table: "socialaccount",
+                column: "UserAccountId");
         }
 
         /// <inheritdoc />
@@ -215,10 +277,19 @@ namespace SocialSyncData.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "forgotpassword");
+
+            migrationBuilder.DropTable(
+                name: "socialaccount");
+
+            migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "useraccount");
         }
     }
 }

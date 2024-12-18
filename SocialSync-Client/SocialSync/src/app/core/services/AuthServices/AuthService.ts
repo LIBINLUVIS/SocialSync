@@ -7,6 +7,7 @@ import { Injectable, signal, computed } from '@angular/core';
 export class AuthService{
 
     private authToken = signal<string | null>(null);
+    // public userid = signal<string|null>(null);
 
     isAuthenticated = computed(()=>this.authToken()!==null)
 
@@ -17,6 +18,26 @@ export class AuthService{
     setToken(token:string){
         sessionStorage.setItem('authToken', token);
         this.authToken.set(token);
+        var userid =  this.getUserId(token);
+        if(userid!=null)
+            sessionStorage.setItem('Userid',userid)
+    }
+
+    private getUserId(token:string):string | null{
+        const parts = token?.split('.');
+        if(parts?.length!==3){
+            return null;
+        }
+
+        const payload = parts[1];
+        const decodedPayload = atob(payload.replace(/-/g, '+').replace(/_/g, '/'));
+
+        const payloadJson = JSON.parse(decodedPayload);
+
+        if (!payloadJson.Userid) {
+            return null;
+        }
+        return payloadJson.Userid;
     }
 
     getToken(): string | null{

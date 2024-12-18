@@ -105,6 +105,12 @@
           "Microsoft.AspNetCore.Http.Extensions": "2.2.0"
         }
       },
+      "Microsoft.AspNetCore.Connections.Abstractions/8.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Features": "8.0.0",
+          "System.IO.Pipelines": "8.0.0"
+        }
+      },
       "Microsoft.AspNetCore.Cryptography.Internal/8.0.10": {
         "runtime": {
           "lib/net8.0/Microsoft.AspNetCore.Cryptography.Internal.dll": {
@@ -202,6 +208,12 @@
       "Microsoft.AspNetCore.Routing.Abstractions/2.2.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Http.Abstractions": "2.2.0"
+        }
+      },
+      "Microsoft.AspNetCore.SignalR.Common/8.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Connections.Abstractions": "8.0.0",
+          "Microsoft.Extensions.Options": "8.0.2"
         }
       },
       "Microsoft.AspNetCore.WebUtilities/2.2.0": {
@@ -388,7 +400,7 @@
           "Microsoft.Bcl.AsyncInterfaces": "6.0.0",
           "Microsoft.CodeAnalysis.Common": "4.5.0",
           "System.Composition": "6.0.0",
-          "System.IO.Pipelines": "6.0.3",
+          "System.IO.Pipelines": "8.0.0",
           "System.Threading.Channels": "6.0.0"
         },
         "runtime": {
@@ -621,6 +633,7 @@
           }
         }
       },
+      "Microsoft.Extensions.Features/8.0.0": {},
       "Microsoft.Extensions.FileProviders.Abstractions/3.1.0": {
         "dependencies": {
           "Microsoft.Extensions.Primitives": "8.0.0"
@@ -1057,7 +1070,7 @@
           "System.Security.Principal.Windows": "5.0.0"
         }
       },
-      "System.IO.Pipelines/6.0.3": {},
+      "System.IO.Pipelines/8.0.0": {},
       "System.Memory/4.5.4": {},
       "System.Memory.Data/1.0.2": {
         "dependencies": {
@@ -1193,6 +1206,7 @@
           "Coravel": "6.0.0",
           "Microsoft.AspNetCore.Identity": "2.2.0",
           "Microsoft.AspNetCore.Routing.Abstractions": "2.2.0",
+          "Microsoft.AspNetCore.SignalR.Common": "8.0.0",
           "SendGrid": "9.29.3",
           "SocialSyncDTO": "1.0.0",
           "SocialSyncData": "1.0.0"
@@ -1291,6 +1305,13 @@
       "path": "microsoft.aspnetcore.authentication.core/2.2.0",
       "hashPath": "microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512"
     },
+    "Microsoft.AspNetCore.Connections.Abstractions/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-WgJE2+VyA0RW4yl+hgfrB7r4CSGcLzAvcVo31swukjXHZvBAjMilyG/pRJ8kroOO1h7sGf4r91Wii2L9gCMNfA==",
+      "path": "microsoft.aspnetcore.connections.abstractions/8.0.0",
+      "hashPath": "microsoft.aspnetcore.connections.abstractions.8.0.0.nupkg.sha512"
+    },
     "Microsoft.AspNetCore.Cryptography.Internal/8.0.10": {
       "type": "package",
       "serviceable": true,
@@ -1381,6 +1402,13 @@
       "sha512": "sha512-lRRaPN7jDlUCVCp9i0W+PB0trFaKB0bgMJD7hEJS9Uo4R9MXaMC8X2tJhPLmeVE3SGDdYI4QNKdVmhNvMJGgPQ==",
       "path": "microsoft.aspnetcore.routing.abstractions/2.2.0",
       "hashPath": "microsoft.aspnetcore.routing.abstractions.2.2.0.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.SignalR.Common/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HOy32Kb4z69sCep+pVUTL11L49pk8Ze18HuqCYllaRMdDlfcSrBE0stb8fJL+ogPKTB7XZAxpj1UT/IJQIfS6g==",
+      "path": "microsoft.aspnetcore.signalr.common/8.0.0",
+      "hashPath": "microsoft.aspnetcore.signalr.common.8.0.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.WebUtilities/2.2.0": {
       "type": "package",
@@ -1549,6 +1577,13 @@
       "sha512": "sha512-mUBDZZRgZrSyFOsJ2qJJ9fXfqd/kXJwf3AiDoqLD9m6TjY5OO/vLNOb9fb4juC0487eq4hcGN/M2Rh/CKS7QYw==",
       "path": "microsoft.extensions.dependencymodel/8.0.2",
       "hashPath": "microsoft.extensions.dependencymodel.8.0.2.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Features/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fxj+P9aIbTLtguFwiNqBtGNl4ZU/2Aggwj4/Ruf3qFaiBk7r1t8KnyJ+bEIK5emMyGSszTndwnP/g+gBEP9zLA==",
+      "path": "microsoft.extensions.features/8.0.0",
+      "hashPath": "microsoft.extensions.features.8.0.0.nupkg.sha512"
     },
     "Microsoft.Extensions.FileProviders.Abstractions/3.1.0": {
       "type": "package",
@@ -1886,12 +1921,12 @@
       "path": "system.io.filesystem.accesscontrol/5.0.0",
       "hashPath": "system.io.filesystem.accesscontrol.5.0.0.nupkg.sha512"
     },
-    "System.IO.Pipelines/6.0.3": {
+    "System.IO.Pipelines/8.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ryTgF+iFkpGZY1vRQhfCzX0xTdlV3pyaTTqRu2ETbEv+HlV7O6y7hyQURnghNIXvctl5DuZ//Dpks6HdL/Txgw==",
-      "path": "system.io.pipelines/6.0.3",
-      "hashPath": "system.io.pipelines.6.0.3.nupkg.sha512"
+      "sha512": "sha512-FHNOatmUq0sqJOkTx+UF/9YK1f180cnW5FVqnQMvYUN0elp6wFzbtPSiqbo1/ru8ICp43JM1i7kKkk6GsNGHlA==",
+      "path": "system.io.pipelines/8.0.0",
+      "hashPath": "system.io.pipelines.8.0.0.nupkg.sha512"
     },
     "System.Memory/4.5.4": {
       "type": "package",
