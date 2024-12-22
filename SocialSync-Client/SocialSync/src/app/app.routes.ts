@@ -36,6 +36,11 @@ export const routes: Routes = [
     loadComponent:()=>import('./Pages/social/account-connect/account-connect.component').then(m=>m.AccountConnectComponent),
     canActivate:[AuthGuard]
 
+  },
+  {
+    path:'CreatePost',
+    loadComponent:()=>import('./Pages/social/create-post-component/create-post-component.component').then(m=>m.CreatePostComponentComponent),
+    canActivate:[AuthGuard]
   }
 
 

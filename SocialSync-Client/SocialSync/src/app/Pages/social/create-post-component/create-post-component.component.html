@@ -1,0 +1,86 @@
+<app-header [userName]="userName" #headerComp></app-header>
+<div class="container mt-4">
+  <!-- Social Account Selection -->
+  <div class="form-group " style="margin-top: 50px;">
+    <label for="socialAccountSelect">Select Social Account</label>
+    <select class="form-control" id="socialAccountSelect">
+      <option>LinkedIn</option>
+      <option>Instagram</option>
+      <option>Twitter</option>
+    </select>
+  </div>
+
+  <div class="pages-container" (click)="tooglepages()">
+    <span>Select Your Admin Pages</span>
+     <span>&#9660;</span>
+  </div>
+  
+  <div class="card drop-down-pages-container" *ngIf="showPages">
+    
+      <div class="page-section" *ngFor="let page of pages">
+        
+        <input
+        [ngClass]="{'checked': page.status}"
+        [checked]="page.status"
+         class="page_checkbox" type="checkbox" (click)="pageselected(page.id,page.name)" id="all" name="all" value="all">
+        <span>{{page.name}}</span>
+      
+      </div>
+  </div>
+
+  <!-- post types -->
+   <!-- <div class="post-type-section">
+    <span>Select Post Type</span>
+    <div class="post-type-btns">
+       <button class="btn btn-warning">Text</button>
+       <button class="btn btn-warning">Image</button>
+    </div>
+   </div> -->
+  
+   <!-- post section -->
+  <div class="post-section">
+    <div class="pt-4">
+      <strong class="p-3">Write your post</strong>
+    </div>
+    <div class="typeing-area mt-2 p-3">
+      <textarea placeholder="what's on your mind?" class="form-control type-area-post" id="" rows="3"></textarea>
+    </div>
+    <div class="attach-file">
+      <input type="file" style="padding-left: 20px;">
+      <!-- <i class="fa-solid fa-paperclip" style="cursor: pointer;padding-left: 20px;"></i> -->
+    </div>
+    <div class="p-3">
+      <div class="card">
+        <div class="post-now-sec">
+            <i class="fa-regular fa-clock"></i>
+            <span style="font-weight: 500;font-size: 15px;">Schedule</span>
+            <button class="btn btn-warning" (click)="Schedule()">Go</button>
+            <button class="btn btn-danger" *ngIf="showDatetimePicker" (click)="CancelSchedule()">Cancel</button>
+        </div>
+        <div class="post-date-time-sec" *ngIf="showDatetimePicker">
+          <div class="mt-4">
+            <mat-form-field class="custom-bg">
+              <mat-label>Schedule the date</mat-label>
+              <input matInput [matDatepicker]="datepicker" [(ngModel)]="value">
+              <mat-datepicker #datepicker/>
+              <mat-datepicker-toggle [for]="datepicker" matSuffix/>
+            </mat-form-field>
+          </div>
+          <div style="display: flex;flex-direction: column; ">
+            <span>Schedule Time</span>
+            <input [ngxTimepicker]="picker"  [(ngModel)]="formattedTime" >
+            <ngx-material-timepicker #picker></ngx-material-timepicker>
+          </div>
+        </div>
+        <div class="Scheduled-details" *ngIf="showDatetimePicker">
+          <span>Post Scheduled Date and Time : {{value}} - {{formattedTime}}</span>
+        </div>
+    </div>
+    </div>
+
+    <div class="cancel-post-btn">
+      <button class="btn btn-warning">Cancel</button>
+      <button class="btn btn-primary">Post</button>
+    </div>
+  </div>
+</div>

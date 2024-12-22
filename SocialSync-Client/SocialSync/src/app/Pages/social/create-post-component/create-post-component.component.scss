@@ -1,0 +1,126 @@
+.container {
+  height: 100vh; /* Full viewport height */
+  overflow-y: auto;
+  position: relative;
+    /* Add vertical scrollbar only when necessary */
+}
+
+.pages-container {
+  height: 30px;
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+
+}
+.pages-container span{
+  color:black;
+}
+
+.drop-down-pages-container{
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+  margin-top: 20px;
+}
+.page-section{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 40px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+// .page-section:hover{
+//   background-color: #e4e6f0
+// }
+.reduced-width {
+  width: 50%; /* Adjust the width as needed */
+  margin: 0 auto; /* Center the container */
+}
+.page_checkbox{
+  size: 10px;
+}
+.page_checkbox.checked{
+  background-color: blue;
+  color: white;
+}
+.post-type-section{
+  height: 80px;
+  margin-top: 30px;
+}
+.post-type-btns{
+  display: flex;
+  gap: 10px;
+  // justify-content: space-between;
+}
+.post-type-btns button{
+  margin-top: 30px;
+  color: white;
+  border-radius: 20px;
+  width: 30%;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+}
+.type-area-post{
+  // background-color: rgb(189, 189, 189);
+  background-color:	#D8D8D8
+}
+.post-now-sec{
+  display: flex;
+  background-color: white;
+  height: 50px;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+.schedule-sec{
+  display: flex;
+  background-color: white;
+}
+.schedule-sec button{
+  width: 30px;
+  background-color: grey;
+  color: black;
+}
+.post-now-sec button{
+ height: 30px;
+
+//   background-color: grey;
+//   color: black;
+//   border: none;
+//   border-radius: 5px;
+}
+.post-section{
+  margin-top: 50px;
+  background-color: rgb(235, 235, 235);
+}
+.cancel-post-btn{
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+.cancel-post-btn button{
+ border: none;
+ width: 100px;
+}
+.post-date-time-sec{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+mat-form-field {
+  margin-right: 16px;
+}
+
+.Scheduled-details{
+  text-align: center;
+  padding: 10px;
+}

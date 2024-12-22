@@ -33,8 +33,10 @@ export class HeaderComponent {
   }
 
   NavtoSocialaccounts(){
-    console.log("hello")
      this.router.navigate(['accounts'])
+  }
+  NavtoCreatePost(){
+    this.router.navigate(['CreatePost'])
   }
 
 }
