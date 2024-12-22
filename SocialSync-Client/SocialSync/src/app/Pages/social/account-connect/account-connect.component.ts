@@ -78,7 +78,7 @@ export class AccountConnectComponent {
   }
 
   ConnectLinkedin(){
-    const clientId = "863yknun9tywlo";
+    const clientId = "";
     const redirectUrl = "http://localhost:4200/accounts";
     const state = Math.random().toString(36).substring(7);
     const scope = "openid,profile,email";
