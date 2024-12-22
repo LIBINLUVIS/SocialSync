@@ -44,9 +44,9 @@ public class SocialService: ISocialService
         {
             {"grant_type","authorization_code"},
             {"code", code},
-            {"redirect_uri",""},
-            {"client_id", ""},
-            {"client_secret", ""},
+            {"redirect_uri","http://localhost:4200/accounts"},
+            {"client_id", "863yknun9tywlo"},
+            {"client_secret", "WPL_AP1.qALYYqo2mfiTrVpX.g7MXEw=="},
         };
         
         var urlencoded = new FormUrlEncodedContent(Reqbody);

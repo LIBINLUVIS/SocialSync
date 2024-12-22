@@ -78,10 +78,10 @@ export class AccountConnectComponent {
   }
 
   ConnectLinkedin(){
-    const clientId = "";
-    const redirectUrl = "";
+    const clientId = "863yknun9tywlo";
+    const redirectUrl = "http://localhost:4200/accounts";
     const state = Math.random().toString(36).substring(7);
-    const scope = "";
+    const scope = "openid,profile,email";
 
     const authUrl = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=${clientId}&redirect_uri=${encodeURIComponent(
       redirectUrl
@@ -153,9 +153,11 @@ export class AccountConnectComponent {
    //api for disconnecting the social account
    this.apiService.disconnectSocialAccount(this.accountuserId,"Linkedin").subscribe({
     next:(response)=>{
-      console.log(response);
+      this.LinkedinConnStatus = "Disconnected";
+      
     },error:(err)=>{
-      console.log(err)
+      this.LinkedinConnStatus = "Connected"
+      this.ErrorSnackBar('Something went wrong while disconnecting!')
     }
    })
   }
