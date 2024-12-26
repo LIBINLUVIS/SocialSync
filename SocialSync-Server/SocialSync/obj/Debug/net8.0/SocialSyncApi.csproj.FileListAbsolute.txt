@@ -783,3 +783,12 @@ C:\Users\lesle\OneDrive\Desktop\SocialSync-Server\SocialSync\obj\Debug\net8.0\re
 C:\Users\lesle\OneDrive\Desktop\SocialSync-Server\SocialSync\obj\Debug\net8.0\SocialSyncApi.pdb
 C:\Users\lesle\OneDrive\Desktop\SocialSync-Server\SocialSync\obj\Debug\net8.0\SocialSyncApi.genruntimeconfig.cache
 C:\Users\lesle\OneDrive\Desktop\SocialSync-Server\SocialSync\obj\Debug\net8.0\ref\SocialSyncApi.dll
+C:\Users\lesle\OneDrive\Desktop\SocialSyncV1\SocialSync\SocialSync\SocialSync-Server\SocialSync\bin\Debug\net8.0\Microsoft.Extensions.Configuration.dll
+C:\Users\lesle\OneDrive\Desktop\SocialSyncV1\SocialSync\SocialSync\SocialSync-Server\SocialSync\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\lesle\OneDrive\Desktop\SocialSyncV1\SocialSync\SocialSync\SocialSync-Server\SocialSync\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\lesle\OneDrive\Desktop\SocialSyncV1\SocialSync\SocialSync\SocialSync-Server\SocialSync\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.dll
+C:\Users\lesle\OneDrive\Desktop\SocialSyncV1\SocialSync\SocialSync\SocialSync-Server\SocialSync\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+C:\Users\lesle\OneDrive\Desktop\SocialSyncV1\SocialSync\SocialSync\SocialSync-Server\SocialSync\bin\Debug\net8.0\Microsoft.Extensions.Http.dll
+C:\Users\lesle\OneDrive\Desktop\SocialSyncV1\SocialSync\SocialSync\SocialSync-Server\SocialSync\bin\Debug\net8.0\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+C:\Users\lesle\OneDrive\Desktop\SocialSyncV1\SocialSync\SocialSync\SocialSync-Server\SocialSync\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+C:\Users\lesle\OneDrive\Desktop\SocialSyncV1\SocialSync\SocialSync\SocialSync-Server\SocialSync\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll

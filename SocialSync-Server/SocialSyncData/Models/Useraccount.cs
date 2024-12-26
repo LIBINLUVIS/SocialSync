@@ -12,4 +12,5 @@ public class Useraccount
     public DateTime CreatedDate { get; set; }
     
     public ICollection<SocialAccount> SocialAccounts { get; set; } 
+    public ICollection<UserPosts> UserPosts { get; set; }
 }
