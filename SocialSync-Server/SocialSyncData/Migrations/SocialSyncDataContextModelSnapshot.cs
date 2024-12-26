@@ -285,6 +285,42 @@ namespace SocialSyncData.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("SocialSyncData.Models.UserPosts", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("DirectPost")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("PostId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PostType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("PostedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ProviderName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UseraccountId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UseraccountId");
+
+                    b.ToTable("UserPosts");
+                });
+
             modelBuilder.Entity("SocialSyncData.Models.Useraccount", b =>
                 {
                     b.Property<int>("id")
@@ -374,9 +410,22 @@ namespace SocialSyncData.Migrations
                     b.Navigation("Useraccount");
                 });
 
+            modelBuilder.Entity("SocialSyncData.Models.UserPosts", b =>
+                {
+                    b.HasOne("SocialSyncData.Models.Useraccount", "Useraccount")
+                        .WithMany("UserPosts")
+                        .HasForeignKey("UseraccountId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Useraccount");
+                });
+
             modelBuilder.Entity("SocialSyncData.Models.Useraccount", b =>
                 {
                     b.Navigation("SocialAccounts");
+
+                    b.Navigation("UserPosts");
                 });
 #pragma warning restore 612, 618
         }

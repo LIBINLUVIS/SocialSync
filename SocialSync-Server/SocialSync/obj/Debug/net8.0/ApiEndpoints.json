@@ -1,6 +1,27 @@
 [
   {
     "ContainingType": "SocialSync.Controllers.AccountController",
+    "Method": "DisconnectSocial",
+    "RelativePath": "Account/DisconnectSocialaccount",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Provider",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SocialSync.Controllers.AccountController",
     "Method": "ForgotPassword",
     "RelativePath": "Account/Forgotpassword",
     "HttpMethod": "POST",
@@ -78,11 +99,6 @@
     "Parameters": [
       {
         "Name": "userId",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Provider",
         "Type": "System.String",
         "IsRequired": false
       }
@@ -440,6 +456,22 @@
   },
   {
     "ContainingType": "SocialSync.Controllers.SocialController",
+    "Method": "GetLinkedinAdminPages",
+    "RelativePath": "Social/getLinkedinAdminPages",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "accessToken",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SocialSync.Controllers.SocialController",
     "Method": "GetLinkedinAccessToken",
     "RelativePath": "Social/LinkedinAccessToken",
     "HttpMethod": "GET",
@@ -454,6 +486,93 @@
       {
         "Name": "accountUserId",
         "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SocialSync.Controllers.SocialController",
+    "Method": "PostImage",
+    "RelativePath": "Social/PostImage",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ContentType",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ContentDisposition",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Headers",
+        "Type": "Microsoft.AspNetCore.Http.IHeaderDictionary",
+        "IsRequired": false
+      },
+      {
+        "Name": "Length",
+        "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "FileName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageId",
+        "Type": "System.Collections.Generic.List\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "AccessToken",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "UserID",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SocialSync.Controllers.SocialController",
+    "Method": "TextOnlyPost",
+    "RelativePath": "Social/TextOnlyPost",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "UserID",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "text",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "AccessToken",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageId",
+        "Type": "System.String",
         "IsRequired": false
       }
     ],

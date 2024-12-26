@@ -9,8 +9,11 @@ using SocialSyncData.Data;
 using SocialSyncData.Models;
 using System.ComponentModel;
 using System.Threading.RateLimiting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.Extensions.Options;
+using Microsoft.OpenApi.Models;
+using Swashbuckle.AspNetCore.SwaggerGen;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -24,7 +27,9 @@ builder.Services.AddControllers();
 builder.Services.AddScoped<IAccountService,AccountService>();
 builder.Services.AddScoped<ISendgridService, SendgridService>();
 builder.Services.AddScoped<ISocialService, SocialService>();
+builder.Services.AddScoped<DataService>();
 
+builder.Services.AddMemoryCache();
 
 builder.Services.AddRateLimiter(policy =>
 {
@@ -38,9 +43,39 @@ builder.Services.AddRateLimiter(policy =>
     });
 });
 
+builder.Services.AddHttpClient("linkedinClient", client =>
+{
+    var linkedinConfigs = builder.Configuration.GetSection("LinkedinConfig");
+    var linkedinXrestliProtocol = linkedinConfigs["X-Restli-Protocol-Version"];
+    var linkedinVersion = linkedinConfigs["LinkedIn-Version"];
+    
+    client.DefaultRequestHeaders.Add("X-Restli-Protocol-Version",linkedinXrestliProtocol);
+    client.DefaultRequestHeaders.Add("LinkedIn-Version",linkedinVersion);
+});
+
+builder.Services.AddHttpClient("linkedinClient1", client =>
+{
+    var linkedinConfigs = builder.Configuration.GetSection("LinkedinConfig");
+    var linkedinVersion = linkedinConfigs["LinkedIn-Version"];
+    
+    client.DefaultRequestHeaders.Add("LinkedIn-Version",linkedinVersion);
+});
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    // Basic Swagger Configuration
+    options.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "File Upload API",
+        Version = "v1"
+    });
+
+    // Add File Upload Operation Filter
+    options.OperationFilter<FileUploadOperationFilter>();
+});
+
+
 
 builder.Services.AddAuthorization();
 builder.Services.AddAuthentication().AddCookie(IdentityConstants.ApplicationScheme)
@@ -64,7 +99,8 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "File Upload API v1"));
+    /*c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "File Upload API v1")*/
 }
 app.Use(async (context, next) =>
 {
@@ -84,3 +120,59 @@ app.MapControllers();
 app.MapIdentityApi<User>();
 
 app.Run();
+
+//config for file uplaod in swagger
+public class FileUploadOperationFilter : IOperationFilter
+{
+    public void Apply(OpenApiOperation operation, OperationFilterContext context)
+    {
+        /*var fileParameters = context.MethodInfo.GetParameters()
+            .Where(p => p.ParameterType == typeof(IFormFile));*/
+        var formParameters = context.MethodInfo.GetParameters()
+            .Where(p => p.GetCustomAttributes(typeof(FromFormAttribute), false).Any());
+        if (formParameters.Any())
+        {
+            operation.Parameters.Clear();
+            operation.RequestBody = new OpenApiRequestBody
+            {
+                Content =
+                {
+                    ["multipart/form-data"] = new OpenApiMediaType
+                    {
+                        Schema = new OpenApiSchema
+                        {
+                            Type = "object",
+                            Properties =
+                            {
+                                ["file"] = new OpenApiSchema
+                                {
+                                    Type = "string",
+                                    Format = "binary"
+                                },
+                                ["PageId"] = new OpenApiSchema
+                                {
+                                    Type = "array",
+                                    Items = new OpenApiSchema { Type = "string" }
+                                },
+                                ["AccessToken"] =  new OpenApiSchema
+                                {
+                                    Type = "string",
+                                },
+                                ["UserID"] =  new OpenApiSchema
+                                {
+                                    Type = "integer",
+                                },
+                                ["PostText"] = new OpenApiSchema
+                                {
+                                    Type = "string",
+                                }
+                            },
+                            Required = new HashSet<string> { "file","PageId","AccessToken","UserID","PostText" },
+                            
+                        }
+                    }
+                }
+            };
+        }
+    }
+}
