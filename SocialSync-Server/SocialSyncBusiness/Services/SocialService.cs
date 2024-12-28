@@ -206,67 +206,73 @@ public class SocialService: ISocialService
         
     }
 
-    public async Task<ServiceResult<string>> TextOnlyPost(int UserID,string text,string AccessToken,string PageId)
+    public async Task<ServiceResult<List<string>>> TextOnlyPost(int UserID,string text,string AccessToken,List<string> PageId)
     {
         var LinkedinApiSec = _configuration.GetSection("LinkedinApis");
         var TextOnlyPostApi = LinkedinApiSec["TextOnlyPost"];
         Provider provider = Provider.Linkedin;
-        string PostId = "";
+        List<string> PostId = new List<string>();
         var Client = _httpClientFactory.CreateClient("linkedinClient");
         Client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", AccessToken);
-        var payload = new
-        {
-            author = PageId,
-            commentary = text,
-            visibility = "PUBLIC",
-            distribution = new
-            {
-                feedDistribution = "MAIN_FEED",
-                targetEntities = new string[] { },
-                thirdPartyDistributionChannels = new string[] { },
-            },
-            lifecycleState = "PUBLISHED",
-            isReshareDisabledByAuthor = false
-        };
-        var jsonPayload = JsonSerializer.Serialize(payload);
         try
         {
-            var req = await Client.PostAsync(TextOnlyPostApi, 
-                new StringContent(jsonPayload, Encoding.UTF8, "application/json"));
-            var reqContent = await req.Content.ReadAsStringAsync();
-            if (req.IsSuccessStatusCode)
+            foreach (var pageId in PageId)
             {
-                if (req.Headers.Contains("x-restli-id"))
+                var payload = new
                 {
-                    var postID = req.Headers.GetValues("x-restli-id").FirstOrDefault();
-                    PostId = postID;
-                    var userPostObj = new UserPosts()
+                    author = pageId,
+                    commentary = text,
+                    visibility = "PUBLIC",
+                    distribution = new
                     {
-                        PostId = postID,
-                        DirectPost = true,
-                        PostedOn = DateTime.Now,
-                        ProviderName = provider.ToString(),
-                        PostType = "TextOnly",
-                        UseraccountId = UserID
+                        feedDistribution = "MAIN_FEED",
+                        targetEntities = new string[] { },
+                        thirdPartyDistributionChannels = new string[] { },
+                    },
+                    lifecycleState = "PUBLISHED",
+                    isReshareDisabledByAuthor = false
+                };
+                var jsonPayload = JsonSerializer.Serialize(payload);
+        
+                var req = await Client.PostAsync(TextOnlyPostApi, 
+                    new StringContent(jsonPayload, Encoding.UTF8, "application/json"));
+                var reqContent = await req.Content.ReadAsStringAsync();
+                if (req.IsSuccessStatusCode)
+                {
+                    if (req.Headers.Contains("x-restli-id"))
+                    {
+                        var postID = req.Headers.GetValues("x-restli-id").FirstOrDefault();
+                        /*PostId = postID;*/
+                        PostId.Add(postID);
+                        var userPostObj = new UserPosts()
+                        {
+                            PostId = postID,
+                            DirectPost = true,
+                            PostedOn = DateTime.Now,
+                            ProviderName = provider.ToString(),
+                            PostType = "TextOnly",
+                            UseraccountId = UserID
+                        };
+                        await _dbcontext.userposts.AddAsync(userPostObj);
+                        await _dbcontext.SaveChangesAsync();
+                    }
+                }
+                else
+                {
+                    return new ServiceResult<List<string>>()
+                    {
+                        Data = null,
+                        Success = false,
+                        StatusCode = 400,
+                        ErrorMessage = $"Error during Post: {reqContent}",
                     };
-                    await _dbcontext.userposts.AddAsync(userPostObj);
-                    await _dbcontext.SaveChangesAsync();
                 }
             }
-            else
-            {
-                return new ServiceResult<string>()
-                {
-                    Data = null,
-                    Success = false,
-                    StatusCode = 400,
-                    ErrorMessage = $"Error during Post: {reqContent}",
-                };
-            }
+
         }
         catch (Exception e)
         {
-            return new ServiceResult<string>()
+            return new ServiceResult<List<string>>()
             {
                 Data = null,
                 Success = false,
@@ -275,9 +281,9 @@ public class SocialService: ISocialService
             };
         }
 
-        return new ServiceResult<string>()
+        return new ServiceResult<List<string>>()
         {
-            Data = PostId,
+            Data = PageId,
             Success = true,
             StatusCode = 200,
             Message = "Success!"

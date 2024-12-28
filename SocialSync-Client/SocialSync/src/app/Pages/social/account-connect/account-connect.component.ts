@@ -35,7 +35,7 @@ export class AccountConnectComponent {
           next:(success)=>{
             if(success.statusCode==200){
               this.accountuserId = success.data
-              console.log(this.accountuserId);
+              sessionStorage.setItem('Accountid',this.accountuserId.toString())
             }
           },
           error:(err)=>{
