@@ -26,7 +26,7 @@ public class DataService
         
         var cacheoptions = new MemoryCacheEntryOptions()
         {
-            AbsoluteExpirationRelativeToNow = TimeSpan.FromSeconds(60),
+            AbsoluteExpirationRelativeToNow = TimeSpan.FromHours(1),
             SlidingExpiration = TimeSpan.FromSeconds(5) // extending the expiration,if we access within 5 sec.
         };
         _cache.Set(key, data, cacheoptions);

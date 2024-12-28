@@ -53,8 +53,8 @@ public class SocialController : ControllerBase
     }
 
     [HttpPost("TextOnlyPost")]
-    public async Task<IActionResult> TextOnlyPost(int UserID,string text, string AccessToken,string PageId)
-    {
+    public async Task<IActionResult> TextOnlyPost(int UserID,string text, string AccessToken,List<string> PageId)
+    { 
         var data = await _socialService.TextOnlyPost(UserID, text, AccessToken,PageId);
         if (data.Success)
         {

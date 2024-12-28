@@ -543,6 +543,11 @@
         "Name": "UserID",
         "Type": "System.Int32",
         "IsRequired": false
+      },
+      {
+        "Name": "PostText",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -572,8 +577,8 @@
       },
       {
         "Name": "PageId",
-        "Type": "System.String",
-        "IsRequired": false
+        "Type": "System.Collections.Generic.List\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
