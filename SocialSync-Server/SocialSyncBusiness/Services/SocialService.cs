@@ -342,6 +342,184 @@ public class SocialService: ISocialService
 
     }
 
+    public async Task<ServiceResult<IEnumerable<Dictionary<string,string>>>> GetpagePosts(PagePostDto model)
+    {
+        var Client = _httpClientFactory.CreateClient("linkedinClient1");
+        Client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", model.AccessToken);
+        var linkedinApiSec = _configuration.GetSection("LinkedinApis");
+        var getPostsApi = linkedinApiSec["GetPagePosts"];
+        var UrnId = model.PageId;
+        string[] parts = UrnId.Split(':');
+        string urnId = parts[^1];
+        string txtcommentary = "";
+        string imageUrl = "";
+        List<Dictionary<string,string>> AllPagePosts = new List<Dictionary<string,string>>();
+        // geting the page latest posts 
+        var res = await Client.GetAsync(
+            $"{getPostsApi}?author=urn%3Ali%3Aorganization%3A{urnId}&q=author&sortBy=LAST_MODIFIED");
+        var resContent = await res.Content.ReadAsStringAsync();
+        if (res.IsSuccessStatusCode)
+        {
+            using var jsDoc = JsonDocument.Parse(resContent);
+            JsonElement root = jsDoc.RootElement;
+
+            if (root.TryGetProperty("elements", out JsonElement elements))
+            {
+                foreach (JsonElement element in elements.EnumerateArray())
+                {
+                    if (element.TryGetProperty("commentary", out JsonElement commentary))
+                    {
+                        string txt = commentary.ToString();
+                        txtcommentary = txt;
+                        if (element.TryGetProperty("content", out JsonElement content))
+                        {
+                            if (content.TryGetProperty("media", out JsonElement media))
+                            {
+                                if (media.TryGetProperty("id", out JsonElement id))
+                                {
+                                    // getting the image
+                                    var imageId = id.ToString();
+                                    imageUrl = await getImageformId(imageId,model.AccessToken);
+  
+                                }
+                            }
+                        }
+                        var postObj = new Dictionary<string, string>()
+                        {
+                            { "commentary", txtcommentary },
+                            { "ImageUrl", imageUrl }
+                        };
+                        
+                        AllPagePosts.Add(postObj);
+    
+                    }
+                    
+                }
+
+            }
+
+        }
+        else
+        {
+            return new ServiceResult<IEnumerable<Dictionary<string,string>>>()
+            {
+                Data = null,
+                ErrorMessage = "Failed to get the posts",
+                StatusCode = 400,
+                Success = false
+            };
+        }
+
+        return new ServiceResult<IEnumerable<Dictionary<string,string>>>()
+        {
+            Data = AllPagePosts,
+            Message = "Success!",
+            StatusCode = 200,
+            Success = true
+        };
+    }
+
+    public async Task<ServiceResult<Dictionary<string,int>>> GetPageStatistics(string accessToken, string PageUrn)
+    {
+        var client = _httpClientFactory.CreateClient("linkedinClient1");
+        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+        int totalPagesviews = await GetTotalPageviews(client, PageUrn);
+        int pageFollowerCount = await GetFollowersCount(client, PageUrn);
+        var pagedataObj = new Dictionary<string, int>()
+        {
+            { "total_followers", pageFollowerCount },
+            { "total_page_views", totalPagesviews },
+        };
+        return new ServiceResult<Dictionary<string, int>>()
+        {
+            Data = pagedataObj,
+            StatusCode = 200,
+            Success = true,
+            Message = "Success!",
+        };
+    }
+
+    private async Task<int> GetTotalPageviews(HttpClient client, string PageUrn)
+    {
+        var linkedinApiSec = _configuration.GetSection("LinkedinApis");
+        var totalpageviewApi = linkedinApiSec["PageStatistics"];
+        var apirequest = await client.GetAsync($"{totalpageviewApi}={PageUrn}");
+        var apiresponse = await apirequest.Content.ReadAsStringAsync();
+        int totalpageview = 0;
+        if (apirequest.IsSuccessStatusCode)
+        {
+            using (JsonDocument doc = JsonDocument.Parse(apiresponse))
+            {
+                JsonElement root = doc.RootElement;
+                JsonElement elements = root.GetProperty("elements");
+
+
+                var tasks = elements.EnumerateArray().Select(async element =>
+                {
+                    var fvk = element.GetProperty("totalPageStatistics");
+
+                    var pagestats = element.GetProperty("totalPageStatistics").GetProperty("views").GetProperty("allPageViews").GetProperty("pageViews");
+                    totalpageview = pagestats.GetInt32();
+
+                }).ToArray();
+                await Task.WhenAll(tasks);
+            }
+        }
+        else
+        {
+            return 0;
+        }
+        
+        return totalpageview;
+    }
+    private async Task<int> GetFollowersCount(HttpClient client, string PageUrn)
+    {
+        
+        var linkedinApiSec = _configuration.GetSection("LinkedinApis");
+        var totalpageviewApi = linkedinApiSec["PageFollowersCount"];
+        
+        var response = await client.GetAsync($"{totalpageviewApi}{PageUrn}?edgeType=COMPANY_FOLLOWED_BY_MEMBER");
+        var content = await response.Content.ReadAsStringAsync();
+
+        if (response.IsSuccessStatusCode)
+        {
+            using (JsonDocument doc = JsonDocument.Parse(content))
+            {
+                JsonElement root = doc.RootElement;
+                return root.GetProperty("firstDegreeSize").GetInt32();
+            }
+        }
+        else
+        {
+            throw new Exception($"Failed to fetch followers count: {content}");
+        }
+    }
+
+    private async Task<string> getImageformId(string Id,string accessToken)
+    {
+        var linkedinApiSec = _configuration.GetSection("LinkedinApis");
+        var imageApi = linkedinApiSec["GetImage"];
+        var client = _httpClientFactory.CreateClient("linkedinClient1");
+        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+        var imageUrl = await client.GetAsync($"{imageApi}/{Id}");
+        var imageurlContent = await imageUrl.Content.ReadAsStringAsync();
+        string liveUrl = "";
+        if (imageUrl.IsSuccessStatusCode)
+        {
+            using var jsDoc = JsonDocument.Parse(imageurlContent);
+            JsonElement root = jsDoc.RootElement;
+            if (root.TryGetProperty("downloadUrl", out JsonElement downloadUrl))
+            {
+                liveUrl = downloadUrl.ToString();
+                
+            }
+        }
+        else
+        {
+            return liveUrl;
+        }
+        return liveUrl;
+    }
 
     private async Task<string> CreateImagePostAsync(string PageId,string ImageId ,string accessToken,string PostText)
     {

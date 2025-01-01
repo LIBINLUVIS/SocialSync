@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using SocialSyncBusiness.IServices;
 using SocialSyncBusiness.Services;
+using SocialSyncDTO.DTOs;
 
 namespace SocialSync.Controllers;
 
@@ -70,7 +71,7 @@ public class SocialController : ControllerBase
     public async Task<IActionResult> PostImage([FromForm] IFormFile file,[FromForm] List<string> PageId,
         [FromForm] string AccessToken,[FromForm] int UserID,[FromForm] string PostText)
     {
-        Console.WriteLine(PageId);
+
         var req = await _socialService.PostImage(file,PageId,AccessToken,UserID,PostText);
         if (req.Success)
         {
@@ -82,6 +83,32 @@ public class SocialController : ControllerBase
         }
     }
 
+    [HttpGet("GetlatestpagePosts")]
+    public async Task<IActionResult> GetLatestPagePosts([FromBody] PagePostDto model)
+    {
+        var req = await _socialService.GetpagePosts(model);
+        if (req.Success)
+        {
+            return Ok(req);
+        }
+        else
+        {
+            return BadRequest(req);
+        }
+    }
 
+    [HttpGet("GetPageStatistics")]
+    public async Task<IActionResult> GetPageStatistics(string accessToken, string PageUrn)
+    {
+        var req = await _socialService.GetPageStatistics(accessToken,PageUrn);
+        if (req.Success)
+        {
+            return Ok(req);
+        }
+        else
+        {
+            return BadRequest(req);
+        }
+    }
     
 }
