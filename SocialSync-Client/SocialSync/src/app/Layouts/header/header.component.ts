@@ -38,5 +38,8 @@ export class HeaderComponent {
   NavtoCreatePost(){
     this.router.navigate(['CreatePost'])
   }
+  NavtoMyPage(){
+    this.router.navigate(['MyPage'])
+  }
 
 }

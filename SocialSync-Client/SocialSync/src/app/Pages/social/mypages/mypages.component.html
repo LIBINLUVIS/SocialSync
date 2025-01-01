@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social Provider UI</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container" id="main-container">
+    <h3 class="mb-4">Social Media Page Manager</h3>
+
+    <!-- Social Provider Dropdown -->
+    <div class="mb-4">
+      <label for="socialProvider" class="form-label">Select the Social Provider</label>
+      <select id="socialProvider" class="form-select" [(ngModel)]="selectedProvider" (change)="fetchPages()">
+        <option value="" disabled>Select Provider</option>
+        <option *ngFor="let provider of socialProviders">{{ provider }}</option>
+      </select>
+    </div>
+
+    <!-- Page Dropdown -->
+    <div class="mb-4">
+      <label for="myPage" class="form-label">Select My Page</label>
+      <select id="myPage" class="form-select" [(ngModel)]="selectedPage" (change)="fetchPosts()">
+        <option value="" disabled>Select Page</option>
+        <option *ngFor="let page of pages" [value]="page.id">{{ page.name }}</option>
+      </select>
+    </div>
+
+    <!-- Posts Accordion -->
+    <div class="accordion" id="postsAccordion">
+      <div class="accordion-item" *ngFor="let post of posts; let i = index">
+        <h2 class="accordion-header" id="heading{{i}}">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse' + i" aria-expanded="true" [attr.aria-controls]="'collapse' + i">
+            {{ post.title }}
+          </button>
+        </h2>
+        <div [id]="'collapse' + i" class="accordion-collapse collapse" [attr.aria-labelledby]="'heading' + i" data-bs-parent="#postsAccordion">
+          <div class="accordion-body">
+            <ul class="list-group">
+              <li class="list-group-item"><strong>Likes:</strong> {{ post.analytics.likes }}</li>
+              <li class="list-group-item"><strong>Views:</strong> {{ post.analytics.views }}</li>
+              <li class="list-group-item"><strong>Impressions:</strong> {{ post.analytics.impressions }}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+

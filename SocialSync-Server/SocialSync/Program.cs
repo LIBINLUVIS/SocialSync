@@ -99,7 +99,7 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "File Upload API v1"));
+    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "SocialSync-API v1"));
     /*c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "File Upload API v1")*/
 }
 app.Use(async (context, next) =>
