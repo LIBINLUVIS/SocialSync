@@ -81,7 +81,7 @@ export class AccountConnectComponent {
     const clientId = "";
     const redirectUrl = "http://localhost:4200/accounts";
     const state = Math.random().toString(36).substring(7);
-    const scope = "openid,profile,email,rw_organization_admin,r_organization_social,w_organization_social,w_member_social";
+    const scope = "openid,profile,email,rw_organization_admin,r_organization_social,w_organization_social,w_member_social,r_basicprofile";
 
     const authUrl = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=${clientId}&redirect_uri=${encodeURIComponent(
       redirectUrl

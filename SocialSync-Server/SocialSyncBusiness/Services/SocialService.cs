@@ -353,6 +353,8 @@ public class SocialService: ISocialService
         string urnId = parts[^1];
         string txtcommentary = "";
         string imageUrl = "";
+        string PublishedAt = "";
+        string authorName = "";
         List<Dictionary<string,string>> AllPagePosts = new List<Dictionary<string,string>>();
         // geting the page latest posts 
         var res = await Client.GetAsync(
@@ -367,10 +369,18 @@ public class SocialService: ISocialService
             {
                 foreach (JsonElement element in elements.EnumerateArray())
                 {
-                    if (element.TryGetProperty("commentary", out JsonElement commentary))
+                    if (element.TryGetProperty("commentary", out JsonElement commentary) 
+                        && element.TryGetProperty("publishedAt", out JsonElement publishedAt)
+                        && element.TryGetProperty("author", out JsonElement author)
+                        )
                     {
                         string txt = commentary.ToString();
                         txtcommentary = txt;
+                        //converting to Datetime 
+                        long timestampMs = publishedAt.GetInt64();
+                        DateTime dateTime = DateTimeOffset.FromUnixTimeMilliseconds(timestampMs).UtcDateTime;
+                        DateTime dateOnly = dateTime.Date;
+                        PublishedAt = dateOnly.ToString("dd-MM-yyyy");
                         if (element.TryGetProperty("content", out JsonElement content))
                         {
                             if (content.TryGetProperty("media", out JsonElement media))
@@ -384,10 +394,15 @@ public class SocialService: ISocialService
                                 }
                             }
                         }
+                        // getting the orgName details
+                        authorName = author.ToString();
+                        var OrgName = await getOrgname(authorName,Client);
                         var postObj = new Dictionary<string, string>()
                         {
                             { "commentary", txtcommentary },
-                            { "ImageUrl", imageUrl }
+                            { "ImageUrl", imageUrl },
+                            {"PublishedAt", PublishedAt },
+                            {"ProfileName",OrgName}
                         };
                         
                         AllPagePosts.Add(postObj);
@@ -437,6 +452,31 @@ public class SocialService: ISocialService
             Success = true,
             Message = "Success!",
         };
+    }
+
+
+    private async Task<string> getOrgname(string author,HttpClient client)
+    {
+        var linkedinApiSec = _configuration.GetSection("LinkedinApis");
+        var orgnameApi = linkedinApiSec["GetOrgPageDetails"];
+        var UrnId = author;
+        string[] parts = UrnId.Split(':');
+        string urnId = parts[^1];
+        var apireq = await client.GetAsync($"{orgnameApi}{urnId}");
+        var apiresponse = await apireq.Content.ReadAsStringAsync();
+        if (apireq.IsSuccessStatusCode)
+        {
+            using (JsonDocument doc = JsonDocument.Parse(apiresponse))
+            {
+                JsonElement root = doc.RootElement;
+                return root.GetProperty("localizedName").ToString();
+            }
+          
+        }
+        else
+        {
+            throw new Exception($"Failed to fetch Organisation name: {apiresponse}");
+        }
     }
 
     private async Task<int> GetTotalPageviews(HttpClient client, string PageUrn)

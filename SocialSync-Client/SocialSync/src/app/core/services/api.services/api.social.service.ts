@@ -52,6 +52,11 @@ export class ApiSocialService{
       return this.apiClient.post(endpoint,formData);
     }
 
+    getLatestPagePosts(data:any):Observable<any>{
+      const endpoint = '/Social/GetlatestpagePosts';
+      return this.apiClient.post(endpoint,data);
+    }
+
 
 
 
