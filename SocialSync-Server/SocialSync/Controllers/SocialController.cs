@@ -83,7 +83,7 @@ public class SocialController : ControllerBase
         }
     }
 
-    [HttpGet("GetlatestpagePosts")]
+    [HttpPost("GetlatestpagePosts")]
     public async Task<IActionResult> GetLatestPagePosts([FromBody] PagePostDto model)
     {
         var req = await _socialService.GetpagePosts(model);

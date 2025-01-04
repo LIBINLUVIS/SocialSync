@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Social Provider UI</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
-</head>
-<body>
-  <div class="container" id="main-container">
-    <h3 class="mb-4">Social Media Page Manager</h3>
+<app-header [userName]="userName" #headerComp></app-header>
+  <div class="container mt-5 pt-3 vh-100"  id="main-container">
+    <h3 class="mb-4">My Page</h3>
 
     <!-- Social Provider Dropdown -->
     <div class="mb-4">
@@ -22,14 +14,16 @@
     <!-- Page Dropdown -->
     <div class="mb-4">
       <label for="myPage" class="form-label">Select My Page</label>
-      <select id="myPage" class="form-select" [(ngModel)]="selectedPage" (change)="fetchPosts()">
-        <option value="" disabled>Select Page</option>
-        <option *ngFor="let page of pages" [value]="page.id">{{ page.name }}</option>
+      <select id="myPage" class="form-select" [(ngModel)]="selectedPage" (change)="fetchPosts()" [(ngModel)]="formData.PageId">
+          <option value="" disabled>Select Page</option>
+          <option *ngIf="isLoading" disabled>Loading...</option>
+          <option *ngFor="let page of pages" [value]="page.id">{{ page.name }}</option>
       </select>
     </div>
 
     <!-- Posts Accordion -->
-    <div class="accordion" id="postsAccordion">
+    <!-- <div class="accordion" id="postsAccordion">
+      <label for="myPage" class="form-label">Latest Posts</label>
       <div class="accordion-item" *ngFor="let post of posts; let i = index">
         <h2 class="accordion-header" id="heading{{i}}">
           <button class="accordion-button" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse' + i" aria-expanded="true" [attr.aria-controls]="'collapse' + i">
@@ -46,12 +40,48 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
+
+    <!-- post card section here -->
+     <div class="mb-3" *ngIf="selectedPage!==null">
+      <label for="myPage" class="form-label">Latest Posts</label>
+
+      <ngx-loading
+      [show]="loading"
+      [config]="{ backdropBorderRadius: '3px', fullScreenBackdrop: true }"
+    ></ngx-loading>
+
+      <div class="post-card" *ngFor="let post of posts;">
+        <div class="header">
+          <img class="avatar" src="assets/company_logo.jpg" alt="User Avatar" />
+          <div class="user-details">
+            <div class="name">{{post.profileName}}</div>
+            <div class="timestamp">{{post.publishedAt}}</div>
+          </div>
+        </div>
+        <div class="content">
+          <p>{{post.commentary}}</p>
+          <img *ngIf="post.postImageUrl!='' " class="post-image" [src]="post.postImageUrl" alt="Post Image" />
+        </div>
+        <div class="actions">
+          <div class="action">
+            <i class="fas fa-thumbs-up"></i> Like (100)
+          </div>
+          <div class="action">
+            <i class="fas fa-comment"></i> Comment (100)
+          </div>
+          <div class="action">
+            <i class="fas fa-share"></i> Share (100)
+          </div>
+        </div>
+      </div>
+      
+      <div style="display: flex;justify-content: center;" *ngIf="posts.length == 0 && !loading">
+        <label for="mypage-nopost">No Recent Post</label>
+      </div>
+     </div>
+
+    <!-- post card section here -->
+
   </div>
-
-  <script src="main.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
-
 

@@ -94,7 +94,6 @@ export class CreatePostComponentComponent {
   }
 
   selectSocialAccount(){
-    console.log(this.selectedOption)
     var userid = sessionStorage.getItem('Userid')
     if(this.selectedOption=="LinkedIn" && userid!=null){
       //checking the authtoken is valid or not

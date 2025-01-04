@@ -360,6 +360,16 @@ namespace SocialSyncBusiness.Services
                         };
                         useraccounts.Add(userdict);
                     }
+                    else
+                    {
+                        var userdict = new Dictionary<string, string>()
+                        {
+                            {"Provider",social.Provider},
+                            {"IsActive","false"},
+                    
+                        };
+                        useraccounts.Add(userdict);
+                    }
                     
                 }
 
