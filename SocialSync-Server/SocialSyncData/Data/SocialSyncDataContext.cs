@@ -24,5 +24,6 @@ namespace SocialSyncData.Data
         public DbSet<Useraccount> useraccount { get; set; }
         public DbSet<SocialAccount> socialaccount { get; set; }
         public DbSet<UserPosts> userposts { get; set; }
+        public DbSet<PostScheduler> PostSchedulers { get; set; }
     }
 }

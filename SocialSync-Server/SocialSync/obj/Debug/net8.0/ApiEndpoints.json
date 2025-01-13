@@ -455,6 +455,134 @@
     ]
   },
   {
+    "ContainingType": "SocialSync.Controllers.SchedulerController",
+    "Method": "LinkedinPost",
+    "RelativePath": "Scheduler/ScheduleLinkedinPost",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ContentType",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ContentDisposition",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Headers",
+        "Type": "Microsoft.AspNetCore.Http.IHeaderDictionary",
+        "IsRequired": false
+      },
+      {
+        "Name": "Length",
+        "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "FileName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageId",
+        "Type": "System.Collections.Generic.List\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "AccessToken",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PostText",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "scheduledDateTime",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SocialSync.Controllers.SchedulerController",
+    "Method": "LinkedinTextOnlyPost",
+    "RelativePath": "Scheduler/ScheduleLinkedinTextOnlyPost",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "scheduledDateTime",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "UserID",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "text",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "AccessToken",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageId",
+        "Type": "System.Collections.Generic.List\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Timezone",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageName",
+        "Type": "System.Collections.Generic.List\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SocialSync.Controllers.SocialController",
+    "Method": "GetLatestPagePosts",
+    "RelativePath": "Social/GetlatestpagePosts",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "SocialSyncDTO.DTOs.PagePostDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "SocialSync.Controllers.SocialController",
     "Method": "GetLinkedinAdminPages",
     "RelativePath": "Social/getLinkedinAdminPages",
@@ -464,6 +592,27 @@
     "Parameters": [
       {
         "Name": "accessToken",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SocialSync.Controllers.SocialController",
+    "Method": "GetPageStatistics",
+    "RelativePath": "Social/GetPageStatistics",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "accessToken",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageUrn",
         "Type": "System.String",
         "IsRequired": false
       }

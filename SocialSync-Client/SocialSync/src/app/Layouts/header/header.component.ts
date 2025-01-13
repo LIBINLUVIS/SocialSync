@@ -41,5 +41,8 @@ export class HeaderComponent {
   NavtoMyPage(){
     this.router.navigate(['MyPage'])
   }
+  NavtoMySchedules(){
+    this.router.navigate(['MySchedules'])
+  }
 
 }

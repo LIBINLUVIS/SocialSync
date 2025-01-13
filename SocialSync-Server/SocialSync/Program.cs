@@ -13,6 +13,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
+using Quartz;
+using Microsoft.Extensions.DependencyInjection;
+using Quartz.Impl;
+using SocialSyncBusiness.Schedulers;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
 
@@ -21,15 +25,20 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 /*builder.Services.AddSignalR();*/
+builder.Services.AddScheduler();
 builder.Services.AddQueue();
+builder.Services.AddTransient<LinkedinTextonlyPostJob>();
+builder.Services.AddTransient<LinkedinPostJob>();
 builder.Services.AddScoped<ForgotPasswordInvocable>();
 builder.Services.AddControllers();
 builder.Services.AddScoped<IAccountService,AccountService>();
 builder.Services.AddScoped<ISendgridService, SendgridService>();
 builder.Services.AddScoped<ISocialService, SocialService>();
+builder.Services.AddScoped<ISchedulerService, SchedulerService>();
 builder.Services.AddScoped<DataService>();
-
 builder.Services.AddMemoryCache();
+
+
 
 builder.Services.AddRateLimiter(policy =>
 {
@@ -43,6 +52,17 @@ builder.Services.AddRateLimiter(policy =>
     });
 });
 
+builder.Services.AddQuartz(
+    /*{
+        var jobKey = JobKey.Create("fuckimgg");
+        opt.AddJob<LinkedinTextonlyPostJob>(jobKey)
+            .AddTrigger(trigger=>trigger.ForJob(jobKey)
+                .WithSimpleSchedule(s=>s.WithIntervalInSeconds(2).RepeatForever())
+            );
+    }*/
+    );
+builder.Services.AddQuartzHostedService(q => q.WaitForJobsToComplete = true);
+builder.Services.AddSingleton<ISchedulerFactory, StdSchedulerFactory>();
 builder.Services.AddHttpClient("linkedinClient", client =>
 {
     var linkedinConfigs = builder.Configuration.GetSection("LinkedinConfig");
@@ -94,6 +114,12 @@ builder.Services.AddHttpContextAccessor();
 
 
 var app = builder.Build();
+
+// Start Coravel Scheduler
+app.Services.UseScheduler(scheduler =>
+{
+    // Add recurring tasks if needed
+});
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -165,9 +191,13 @@ public class FileUploadOperationFilter : IOperationFilter
                                 ["PostText"] = new OpenApiSchema
                                 {
                                     Type = "string",
+                                },
+                                ["scheduledDateTime"] = new OpenApiSchema
+                                {
+                                    Type = "DateTime",
                                 }
                             },
-                            Required = new HashSet<string> { "file","PageId","AccessToken","UserID","PostText" },
+                            Required = new HashSet<string> { "file","PageId","AccessToken","UserID","PostText","scheduledDateTime" },
                             
                         }
                     }

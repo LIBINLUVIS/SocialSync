@@ -30,7 +30,6 @@ public class SocialService: ISocialService
         _dbcontext = dbcontext;
         _httpClientFactory = httpClientFactory;
         _configuration = configuration;
-        
     }
     
     public class  Token
@@ -252,6 +251,7 @@ public class SocialService: ISocialService
                             ProviderName = provider.ToString(),
                             PostType = "TextOnly",
                             UseraccountId = UserID
+                            
                         };
                         await _dbcontext.userposts.AddAsync(userPostObj);
                         await _dbcontext.SaveChangesAsync();

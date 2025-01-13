@@ -46,6 +46,11 @@ export const routes: Routes = [
     path:'MyPage',
     loadComponent:()=>import('./Pages/social/mypages/mypages.component').then(m=>m.MypagesComponent),
     canActivate:[AuthGuard]
+  },
+  {
+    path:'MySchedules',
+    loadComponent:()=>import('./Pages/social/my-schedulers/my-schedulers.component').then(m=>m.MySchedulersComponent),
+    canActivate:[AuthGuard]
   }
 
 

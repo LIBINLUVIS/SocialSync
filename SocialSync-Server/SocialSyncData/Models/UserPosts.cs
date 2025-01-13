@@ -11,4 +11,7 @@ public class UserPosts
     
     public Useraccount Useraccount { get; set; }
     public int UseraccountId { get; set; }
+    
+    public PostScheduler? PostScheduler { get; set; }
+    public int? PostSchedulerId { get; set; }
 }
