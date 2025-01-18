@@ -30,6 +30,9 @@ export default class ApistorageService{
   return true
 
  }
+ clearStorage(){
+  localStorage.clear();
+ }
 
 
 }

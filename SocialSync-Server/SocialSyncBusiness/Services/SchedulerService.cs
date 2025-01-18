@@ -4,6 +4,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using Coravel.Queuing.Interfaces;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Quartz;
@@ -101,6 +102,48 @@ public class SchedulerService : ISchedulerService
         using var memoryStream = new MemoryStream();
         await file.CopyToAsync(memoryStream);
         return Convert.ToBase64String(memoryStream.ToArray());
+    }
+
+    public async Task<ServiceResult<List<PostScheduleDto>>> myschedules(int userId)
+    {
+        
+        List<PostScheduleDto> postScheduledObj = new List<PostScheduleDto>();
+        try
+        {
+            var userpostSchedules = await _dbcontext.PostSchedulers
+                .Where(u => u.UseraccountId==userId)
+                .ToListAsync();
+            foreach (var postdetails in userpostSchedules)
+            {
+                var ScheduledObj = new PostScheduleDto()
+                {
+                    Provider = postdetails.ProviderName,
+                    commentary = postdetails.PostCommentary,
+                    Pagename = postdetails.PageName,
+                    IsPosted = postdetails.Isposted,
+                    ScheduledDate = postdetails.ScheduledDateTime,
+                };
+                postScheduledObj.Add(ScheduledObj);
+            }
+        }
+        catch (Exception e)
+        {
+            return new ServiceResult<List<PostScheduleDto>>()
+            {
+                Success = false,
+                Data = null,
+                ErrorMessage = e.Message,
+                StatusCode = 500
+            };
+        }
+
+        return new ServiceResult<List<PostScheduleDto>>()
+        {
+            Success = true,
+            Data = postScheduledObj,
+            StatusCode = 200,
+            Message = "Success"
+        };
     }
     
     

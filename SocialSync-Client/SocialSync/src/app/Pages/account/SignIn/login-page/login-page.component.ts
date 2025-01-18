@@ -68,7 +68,7 @@ export class LoginPageComponent {
             this.loading.set(false);
             this.formData.set(null);
             if(response.data!=null && response.statusCode == 200){
-              this.SuccessSnackBar('Login Success.')
+              // this.SuccessSnackBar('Login Success.')
               this.authService.setToken(response.data)
               this.router.navigate(['home'])
             }else if(response.statusCode == 402){

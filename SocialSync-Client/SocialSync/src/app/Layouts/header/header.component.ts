@@ -1,5 +1,6 @@
 import { Component, ElementRef, Input, Renderer2, ViewChild, viewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import ApistorageService from '../../core/services/localstorageService/api,storage.service';
 
 @Component({
   selector: 'app-header',
@@ -16,7 +17,8 @@ export class HeaderComponent {
   
   constructor(
     private renderer:Renderer2,
-    private router:Router
+    private router:Router,
+    private localstorageService:ApistorageService
   ){
 
   }
@@ -43,6 +45,10 @@ export class HeaderComponent {
   }
   NavtoMySchedules(){
     this.router.navigate(['MySchedules'])
+  }
+  logout(){
+     this.localstorageService.clearStorage();
+     this.router.navigate(['login'])
   }
 
 }

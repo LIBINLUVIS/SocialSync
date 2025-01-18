@@ -91,12 +91,12 @@ public class LinkedinTextonlyPostJob : IInvocable,IInvocableWithPayload<Linkedin
                                 var userPostObj = new UserPosts()
                                 {
                                     PostId = postID,
-                                    DirectPost = true,
+                                    DirectPost = false,
                                     PostedOn = DateTime.Now,
                                     ProviderName = provider.ToString(),
                                     PostType = "TextOnly",
                                     UseraccountId = userID,
-                                    PostSchedulerId = postScheduler
+                                    PostSchedulerId = postScheduler,
                                 };
                                 await _dbcontext.userposts.AddAsync(userPostObj);
                                 await _dbcontext.SaveChangesAsync();

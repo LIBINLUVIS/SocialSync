@@ -2,6 +2,7 @@ import { Observable } from "rxjs";
 import { ApiMethods } from "./api.methods";
 import { Injectable } from "@angular/core";
 import { HttpHeaders } from "@angular/common/http";
+import { NumberValueAccessor } from "@angular/forms";
 
 @Injectable({
     providedIn: 'root', 
@@ -56,7 +57,28 @@ export class ApiSocialService{
       const endpoint = '/Social/GetlatestpagePosts';
       return this.apiClient.post(endpoint,data);
     }
+    ScheduleTextonlyPost(scheduledDateTime:string,UserID:string,text:string,AccessToken:string,PageId:Array<string>,
+      Timezone:string | null,Pagename:Array<string>):Observable<any>{
+        const params = [
+          {key:'scheduledDateTime',value:scheduledDateTime},
+          {key:'UserID',value:UserID},
+          {key:'text',value:text},
+          {key:'AccessToken',value:AccessToken},
+          {key:'PageId',value:PageId.join(',')},
+          {key:'Timezone',value:Timezone || ''},
+          {key:'pageName',value:Pagename.join(',')}
+        ];
+        const endpoint = '/Scheduler/ScheduleLinkedinTextOnlyPost';
+        return this.apiClient.postParams(endpoint,null,params)
+      }
 
+     getmySchedules(userID:number):Observable<any>{
+      const endpoint = '/Scheduler/MySchedules';
+      const params = [
+        {key:'useraccountId',value:userID.toString()},
+      ];
+      return this.apiClient.get(endpoint,params)
+     }
 
 
 

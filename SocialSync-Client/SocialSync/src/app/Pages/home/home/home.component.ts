@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit{
  startText:string = 'SocialSync 🚀' 
  newtext:string = '';
  displayedText: string = '';    
- typingSpeed: number = 80;
+ typingSpeed: number = 20;
  isTextComplete: boolean = false;
  isnextTextComplete :boolean = false;
 
