@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 using Quartz;
 using SocialSyncBusiness.IServices;
 using SocialSyncData.Data;
@@ -36,9 +37,10 @@ public class SchedulerController : ControllerBase
         TimeZoneInfo userTimeZone = TimeZoneInfo.FindSystemTimeZoneById(Timezone);
         DateTime userLocalTime = TimeZoneInfo.ConvertTimeFromUtc(scheduledDateTime, userTimeZone);
         List<int> PostSchedulerIds = new List<int>();
+        var resultUrn = pageName[0].Trim('[', ']').Split(',');
         if (scheduledTime <= DateTime.UtcNow)
         {
-            return BadRequest("Scheduled time must be in the future.");
+            return Ok(new { message = "Scheduling must be in future", statusCode = 404, success = false });
         }
          //move this to a service : TODO
         foreach (var pagename in pageName)
@@ -51,7 +53,8 @@ public class SchedulerController : ControllerBase
                     Isposted = false,
                     PageName = pagename,
                     PostCommentary = text,
-                    ProviderName = provider.ToString()
+                    ProviderName = provider.ToString(),
+                    UseraccountId = UserID
                 };
                 await _dbContext.PostSchedulers.AddAsync(postSchedulerobj);
                 await _dbContext.SaveChangesAsync();
@@ -87,5 +90,19 @@ public class SchedulerController : ControllerBase
         _schedulerService.LinkedinPost(file,PageId,AccessToken,userId,PostText,scheduledTime);
 
         return Ok(new {message = $"PostScheduled at : {scheduledDateTime}"});
+    }
+
+    [HttpGet("MySchedules")]
+    public async Task<IActionResult> MySchedules(int useraccountId)
+    {
+        var req = await _schedulerService.myschedules(useraccountId);
+        if (req.Success)
+        {
+            return Ok(req);
+        }
+        else
+        {
+            return BadRequest(req);
+        }
     }
 }

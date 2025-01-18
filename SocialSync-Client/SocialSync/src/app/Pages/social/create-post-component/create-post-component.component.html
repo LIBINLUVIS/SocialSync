@@ -1,5 +1,5 @@
 <app-header [userName]="userName" #headerComp></app-header>
-<div class="container mt-4 vh-100">
+<div class="container vh-100" style="height: 100%;">
   <!-- Social Account Selection -->
   <div class="form-group " style="margin-top: 50px;">
     <label for="socialAccountSelect">Select Social Account</label>
@@ -68,14 +68,17 @@
           </div>
         </div>
         <div class="Scheduled-details" *ngIf="showDatetimePicker">
-          <span>Post Scheduled Date and Time : {{value}} - {{formattedTime}}</span>
+          <button class="btn btn-primary" (click)="SchedulePost()">
+            Post on {{value | date:'EEE MMM dd'}} at {{formattedTime}}
+          </button>
+          <!-- <span>Post on {{value | date:'EEE MMM dd'}} at {{formattedTime}}</span> -->
         </div>
     </div>
     </div>
 
     <div class="cancel-post-btn">
       <button class="btn btn-warning">Cancel</button>
-      <button class="btn btn-primary" (click)="makedirectPost()">Post</button>
+      <button class="btn btn-primary" (click)="makedirectPost()" [disabled]="IsPostScheduled">Post</button>
     </div>
   </div>
 </div>

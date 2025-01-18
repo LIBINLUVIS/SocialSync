@@ -1,6 +1,6 @@
 .container {
   height: 100vh; /* Full viewport height */
-  overflow-y: auto;
+  // overflow-y: auto;
   position: relative;
     /* Add vertical scrollbar only when necessary */
 }
@@ -112,6 +112,7 @@
   margin-top: 20px;
   margin-bottom: 20px;
   display: flex;
+  flex-direction: column;
   gap: 20px;
   justify-content: center;
   align-items: center;

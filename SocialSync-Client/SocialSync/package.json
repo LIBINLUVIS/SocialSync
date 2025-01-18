@@ -23,6 +23,7 @@
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.3",
     "howler": "^2.2.4",
+    "luxon": "^3.5.0",
     "ngx-countdown": "^18.0.0",
     "ngx-loading": "^17.0.0",
     "ngx-material-timepicker": "^13.1.1",

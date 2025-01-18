@@ -3,10 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSync\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Migrations\\20250113185155_Altered_userposts_20250114.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Migrations\\20250118091524_added_column_postSchedulerTable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Migrations\\20250113181042_Altered_table_20250113.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0721591F-4AFE-41C9-9A79-9858417738B9}|..\\SocialSyncData\\SocialSyncData.csproj|c:\\users\\lesle\\onedrive\\desktop\\socialsyncv1\\socialsync\\socialsync\\socialsync-server\\socialsyncdata\\migrations\\20250113185155_altered_userposts_20250114.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0721591F-4AFE-41C9-9A79-9858417738B9}|..\\SocialSyncData\\SocialSyncData.csproj|c:\\users\\lesle\\onedrive\\desktop\\socialsyncv1\\socialsync\\socialsync\\socialsync-server\\socialsyncdata\\models\\userposts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -166,6 +166,9 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{0721591F-4AFE-41C9-9A79-9858417738B9}|..\\SocialSyncData\\SocialSyncData.csproj|c:\\users\\lesle\\onedrive\\desktop\\socialsyncv1\\socialsync\\socialsync\\socialsync-server\\socialsyncdata\\migrations\\20250111152702_initial_migration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0721591F-4AFE-41C9-9A79-9858417738B9}|..\\SocialSyncData\\SocialSyncData.csproj|c:\\users\\lesle\\onedrive\\desktop\\socialsyncv1\\socialsync\\socialsync\\socialsync-server\\socialsyncdata\\migrations\\20250113181042_altered_table_20250113.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -200,6 +203,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "20250118091524_added_column_postSchedulerTable.cs",
+              "DocumentMoniker": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Migrations\\20250118091524_added_column_postSchedulerTable.cs",
+              "RelativeDocumentMoniker": "..\\SocialSyncData\\Migrations\\20250118091524_added_column_postSchedulerTable.cs",
+              "ToolTip": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Migrations\\20250118091524_added_column_postSchedulerTable.cs",
+              "RelativeToolTip": "..\\SocialSyncData\\Migrations\\20250118091524_added_column_postSchedulerTable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T09:15:24.469Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "20250113185155_Altered_userposts_20250114.cs",
               "DocumentMoniker": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Migrations\\20250113185155_Altered_userposts_20250114.cs",
               "RelativeDocumentMoniker": "..\\SocialSyncData\\Migrations\\20250113185155_Altered_userposts_20250114.cs",
@@ -212,7 +228,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 53,
               "Title": "20250113181042_Altered_table_20250113.cs",
               "DocumentMoniker": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Migrations\\20250113181042_Altered_table_20250113.cs",
               "RelativeDocumentMoniker": "..\\SocialSyncData\\Migrations\\20250113181042_Altered_table_20250113.cs",
@@ -220,8 +236,7 @@
               "RelativeToolTip": "..\\SocialSyncData\\Migrations\\20250113181042_Altered_table_20250113.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-13T18:10:42.864Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-13T18:10:42.864Z"
             },
             {
               "$type": "Document",
@@ -233,8 +248,7 @@
               "RelativeToolTip": "..\\SocialSyncData\\Models\\UserPosts.cs",
               "ViewState": "AgIAAAQAAAAAAAAAAAAzwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-13T18:07:49.212Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-13T18:07:49.212Z"
             },
             {
               "$type": "Document",
@@ -246,8 +260,7 @@
               "RelativeToolTip": "..\\SocialSyncData\\Migrations\\20250111162700_Altered_table_relations_20251101.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-11T16:27:00.56Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-11T16:27:00.56Z"
             },
             {
               "$type": "Document",

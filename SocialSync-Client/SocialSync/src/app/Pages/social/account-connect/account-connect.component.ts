@@ -1,15 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { ApiAccountService } from '../../../core/services/api.services/api.account.service';
 import { ApiSocialService } from '../../../core/services/api.services/api.social.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import ApistorageService from '../../../core/services/localstorageService/api,storage.service';
 import { CommonModule } from '@angular/common';
+import { HeaderComponent } from '../../../Layouts/header/header.component';
+import { AuthService } from '../../../core/services/AuthServices/AuthService';
 
 
 @Component({
   selector: 'app-account-connect',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,HeaderComponent],
   templateUrl: './account-connect.component.html',
   styleUrl: './account-connect.component.scss'
 })
@@ -19,12 +21,18 @@ export class AccountConnectComponent {
    userId:string= ""
    accountuserId:number = 0;
    LinkedinConnStatus:string = "Disconnected"
-
-  constructor(private apiService:ApiAccountService,
+   userName:string = "";
+   @ViewChild('headerComp', { static: false }) headerComp!: HeaderComponent;
+  constructor(private apiService:ApiAccountService,private authService:AuthService,
     private socialapiService:ApiSocialService, private snackBar: MatSnackBar,private locastorageService:ApistorageService){}
 
   ngOnInit(){
-  
+    var userName = this.authService.getUserProfile();
+    if(userName){
+     this.userName = userName
+    }else{
+     this.userName = ""
+    }
       var userid = sessionStorage.getItem('Userid')
       if(userid!=null)
         this.userId = userid

@@ -168,3 +168,6 @@ C:\Users\lesle\OneDrive\Desktop\SocialSyncV1\SocialSync\SocialSync\SocialSync-Se
 C:\Users\lesle\OneDrive\Desktop\SocialSyncV1\SocialSync\SocialSync\SocialSync-Server\SocialSync\obj\Debug\net8.0\SocialSyncApi.pdb
 C:\Users\lesle\OneDrive\Desktop\SocialSyncV1\SocialSync\SocialSync\SocialSync-Server\SocialSync\obj\Debug\net8.0\SocialSyncApi.genruntimeconfig.cache
 C:\Users\lesle\OneDrive\Desktop\SocialSyncV1\SocialSync\SocialSync\SocialSync-Server\SocialSync\obj\Debug\net8.0\ref\SocialSyncApi.dll
+C:\Users\lesle\OneDrive\Desktop\SocialSyncV1\SocialSync\SocialSync\SocialSync-Server\SocialSync\bin\Debug\net8.0\SocialSyncApi.staticwebassets.endpoints.json
+C:\Users\lesle\OneDrive\Desktop\SocialSyncV1\SocialSync\SocialSync\SocialSync-Server\SocialSync\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\lesle\OneDrive\Desktop\SocialSyncV1\SocialSync\SocialSync\SocialSync-Server\SocialSync\obj\Debug\net8.0\staticwebassets\msbuild.SocialSyncApi.Microsoft.AspNetCore.StaticWebAssetEndpoints.props

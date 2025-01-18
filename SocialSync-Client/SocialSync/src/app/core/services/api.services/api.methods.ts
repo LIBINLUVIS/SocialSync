@@ -74,6 +74,32 @@ export class ApiMethods{
             return this.http.post<T>(url,body,options);
      }
 
+     postParams<T>(
+      endpoint: string,
+      body: any,
+      params?: { key: string; value: string }[],
+      customHeaders?: HttpHeaders
+    ): Observable<T> {
+      let httpParams = new HttpParams();
+    
+      if (params) {
+        params.forEach((param) => {
+          if (param.value !== null && param.value !== undefined) {
+            httpParams = httpParams.set(param.key, param.value);
+          }
+        });
+      }
+    
+      const url = `${this.baseUrl}${endpoint}`;
+    
+      const options = {
+        headers: customHeaders || this.defaultHeaders,
+        params: params ? httpParams : undefined,
+      };
+    
+      return this.http.post<T>(url, body, options);
+    }
+
    
 
 }

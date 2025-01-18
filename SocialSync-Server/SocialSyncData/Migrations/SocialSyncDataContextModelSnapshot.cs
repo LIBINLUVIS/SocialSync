@@ -214,6 +214,9 @@ namespace SocialSyncData.Migrations
                     b.Property<DateTime>("ScheduledDateTime")
                         .HasColumnType("datetime2");
 
+                    b.Property<int?>("UseraccountId")
+                        .HasColumnType("int");
+
                     b.HasKey("PostSchedulerId");
 
                     b.ToTable("PostSchedulers");

@@ -16,6 +16,6 @@ public class PostScheduler
     public string? ProviderName { get; set; }
     
     public UserPosts? UserPost { get; set; }
-    
+    public int? UseraccountId { get; set; }
 
 }
