@@ -15,11 +15,15 @@ namespace SocialSyncData.Data
         {
         }
 
-        protected override void OnModelCreating(ModelBuilder builder)
-        {
-            base.OnModelCreating(builder);
-        }
+        //protected override void OnModelCreating(ModelBuilder builder)
+        //{
+        //    base.OnModelCreating(builder);
+        //}
 
         public DbSet<Forgotpassword> forgotpassword { get; set; }
+        public DbSet<Useraccount> useraccount { get; set; }
+        public DbSet<SocialAccount> socialaccount { get; set; }
+        public DbSet<UserPosts> userposts { get; set; }
+        public DbSet<PostScheduler> PostSchedulers { get; set; }
     }
 }

@@ -17,6 +17,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Runtime.InteropServices.JavaScript;
 using System.Security.Claims;
 using System.Security.Policy;
 using System.Text;
@@ -43,9 +44,8 @@ namespace SocialSyncBusiness.Services
             _dbContext = dbContext;
         }
 
-
-
-        public async Task<ServiceResult<bool>> SignupUser(UserRegisterDto model)
+        
+        public async Task<ServiceResult<string>> SignupUser(UserRegisterDto model)
         {
             var user = new User
             {
@@ -62,31 +62,70 @@ namespace SocialSyncBusiness.Services
             {
                 await _signInManager.SignInAsync(user, isPersistent: false);
 
-                return new ServiceResult<bool> { Success = true };
+                return new ServiceResult<string> { Success = true,
+                    Message = "User created successfully.",
+                    StatusCode = 201
+                };
             }
             else
             {
-                return new ServiceResult<bool> { Success = false };
+                return new ServiceResult<string> { Success = false,
+                    Message = "Oops User not registered",
+                    StatusCode = 400
+                };
 
             }
         }
 
-        public async Task<string> SignInUser(UserLoginDto model)
+        public async Task<ServiceResult<string>> SignInUser(UserLoginDto model)
         {
          
-          var user = await _userManager.FindByNameAsync(model.Username);
-          if (user != null && await _userManager.CheckPasswordAsync(user, model.Password))
+          var user = await _userManager.FindByEmailAsync(model.email);
+          
+          if (user != null && await _userManager.CheckPasswordAsync(user, model.password))
           {
           var token = GenerateJwtToken(user);
-          return token;
-          
+          if (token != null)
+          {
+              var Isuseraccount = await _dbContext.useraccount.Where(u => u.UserId == user.Id).FirstOrDefaultAsync();
+              if (Isuseraccount != null)
+              {
+                  Isuseraccount.AuthToken = token;
+                  Isuseraccount.TokenExpiry = DateTime.Now.AddHours(1);
+                  await _dbContext.SaveChangesAsync();
+
+              }
+              else
+              {
+              var useraccountObj = new Useraccount()
+              {
+                  AuthToken = token,
+                  CreatedDate = DateTime.Now,
+                  TokenExpiry = DateTime.Now.AddHours(1),
+                  UserId = user.Id
+              };
+              await _dbContext.useraccount.AddAsync(useraccountObj);
+              await _dbContext.SaveChangesAsync();
+          }
+          }
+          return new ServiceResult<string>
+          {
+              Success = true,
+              Message = "User Login Successfully.",
+              StatusCode = 200,
+              Data = token  
+          };
+
           }
 
             else
             {
-                var errormsg = "Wrong Credentials";
-
-                return errormsg;
+                return new ServiceResult<string>
+                {
+                    Success = false,
+                    Message = "User Login failed",
+                    StatusCode = 402
+                };
             }
 
 
@@ -150,7 +189,8 @@ namespace SocialSyncBusiness.Services
             return new ServiceResult<string>
             {
                 Success = true,
-                Message = "Please check your Email!"
+                Message = "Please check your Email!",
+                StatusCode = 200
             };
 
         }
@@ -249,6 +289,113 @@ namespace SocialSyncBusiness.Services
 
         }
 
+        public async Task<ServiceResult<int>> GetUserId(string userId)
+        {
+            var result = await _dbContext.useraccount.Where(us => us.UserId == userId).Select(u => u.id)
+                .FirstOrDefaultAsync();
+            if (result != 0)
+            {
+               
+                return new ServiceResult<int>()
+                {
+                    StatusCode = 200,
+                    Data = result,
+                    Message = "Success",
+                    Success = true
+                };
+            }
+            else
+            {
+                return new ServiceResult<int>()
+                {
+                    StatusCode = 404,
+                    Data = 0,
+                    Message = "Not Found",
+                    Success = false
+                };
+            }
+        }
+
+        public async Task<IEnumerable<Dictionary<string,string>>> GetSocialConnectionStatus(string userId)
+        {
+            var socialaccount = await _dbContext.useraccount.Include(s => s.SocialAccounts)
+                .Where(u => u.UserId == userId).Select(s=>s.SocialAccounts).ToListAsync();
+            var useraccounts = new List<Dictionary<string,string>>();
+            foreach (var socialList in socialaccount)
+            {
+
+                foreach (var social in socialList)
+                {
+
+                    DateTime tokenExpiry = social.AccessTokenExpiry;
+                    if (social.IsActive && DateTime.UtcNow <= tokenExpiry)
+                    {
+                        var userdict = new Dictionary<string, string>()
+                        {
+                            {"Provider",social.Provider},
+                            {"IsActive","true"},
+                    
+                        };
+                        useraccounts.Add(userdict);
+                    }
+
+                    if (!social.IsActive && DateTime.UtcNow >= tokenExpiry)
+                    {
+                        var userdict = new Dictionary<string, string>()
+                        {
+                            {"Provider",social.Provider},
+                            {"IsActive","false"},
+                    
+                        };
+                        useraccounts.Add(userdict);
+                    }
+
+                    if (social.IsActive && DateTime.UtcNow >= tokenExpiry)
+                    {
+                        var userdict = new Dictionary<string, string>()
+                        {
+                            {"Provider",social.Provider},
+                            {"IsActive","false"},
+                    
+                        };
+                        useraccounts.Add(userdict);
+                    }
+                    else
+                    {
+                        var userdict = new Dictionary<string, string>()
+                        {
+                            {"Provider",social.Provider},
+                            {"IsActive","false"},
+                    
+                        };
+                        useraccounts.Add(userdict);
+                    }
+                    
+                }
+
+            }
+
+            return useraccounts;
+
+        }
+
+        public async Task<bool> DissconnectSocialAccount(int userId,string Provider)
+        {
+            var useraccount = await _dbContext.socialaccount.Where(so=>so.UserAccountId == userId && so.Provider == Provider)
+                .FirstOrDefaultAsync();
+            if (useraccount != null)
+            {
+                useraccount.IsActive = false;
+                
+                await _dbContext.SaveChangesAsync();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
 
         private static string GeneraterandomCode()
         {
@@ -263,12 +410,13 @@ namespace SocialSyncBusiness.Services
             var key = Encoding.UTF8.GetBytes("A9G+7Sd1Zp1f2S4+yKcD/Tv0+QX/G1FOMhg0c6pFWTc="); // Replace with your secure key
             var tokenDescriptor = new SecurityTokenDescriptor
             {
-                Subject = new ClaimsIdentity(new[]
-                {
-            new Claim(JwtRegisteredClaimNames.Sub, user.Id),
-            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-            new Claim(ClaimTypes.Name, user.UserName)
-            }),
+                    Subject = new ClaimsIdentity(new[]
+                    {
+                new Claim(JwtRegisteredClaimNames.Sub, user.Id),
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                new Claim(ClaimTypes.Name, user.UserName),
+                new Claim("Userid", user.Id),   
+                }),
                 Expires = DateTime.UtcNow.AddHours(1), // Token expiry
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature),
                 Issuer = "https://libinluvis.netlify.app", // Replace with your Issuer

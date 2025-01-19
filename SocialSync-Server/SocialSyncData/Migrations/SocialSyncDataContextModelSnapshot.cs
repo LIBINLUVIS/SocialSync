@@ -185,6 +185,78 @@ namespace SocialSyncData.Migrations
                     b.ToTable("forgotpassword");
                 });
 
+            modelBuilder.Entity("SocialSyncData.Models.PostScheduler", b =>
+                {
+                    b.Property<int>("PostSchedulerId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PostSchedulerId"));
+
+                    b.Property<bool>("Isposted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("PageName")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("PostCommentary")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("PostId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ProviderName")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<DateTime>("ScheduledDateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("UseraccountId")
+                        .HasColumnType("int");
+
+                    b.HasKey("PostSchedulerId");
+
+                    b.ToTable("PostSchedulers");
+                });
+
+            modelBuilder.Entity("SocialSyncData.Models.SocialAccount", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<string>("AccessToken")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("AccessTokenExpiry")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Provider")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UserAccountId")
+                        .HasColumnType("int");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("UserAccountId");
+
+                    b.ToTable("socialaccount");
+                });
+
             modelBuilder.Entity("SocialSyncData.Models.User", b =>
                 {
                     b.Property<string>("Id")
@@ -250,6 +322,76 @@ namespace SocialSyncData.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("SocialSyncData.Models.UserPosts", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("DirectPost")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("PostId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("PostSchedulerId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("PostType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("PostedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ProviderName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UseraccountId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PostSchedulerId")
+                        .IsUnique()
+                        .HasFilter("[PostSchedulerId] IS NOT NULL");
+
+                    b.HasIndex("UseraccountId");
+
+                    b.ToTable("userposts");
+                });
+
+            modelBuilder.Entity("SocialSyncData.Models.Useraccount", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<string>("AuthToken")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("TokenExpiry")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("useraccount");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -299,6 +441,46 @@ namespace SocialSyncData.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("SocialSyncData.Models.SocialAccount", b =>
+                {
+                    b.HasOne("SocialSyncData.Models.Useraccount", "Useraccount")
+                        .WithMany("SocialAccounts")
+                        .HasForeignKey("UserAccountId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Useraccount");
+                });
+
+            modelBuilder.Entity("SocialSyncData.Models.UserPosts", b =>
+                {
+                    b.HasOne("SocialSyncData.Models.PostScheduler", "PostScheduler")
+                        .WithOne("UserPost")
+                        .HasForeignKey("SocialSyncData.Models.UserPosts", "PostSchedulerId");
+
+                    b.HasOne("SocialSyncData.Models.Useraccount", "Useraccount")
+                        .WithMany("UserPosts")
+                        .HasForeignKey("UseraccountId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("PostScheduler");
+
+                    b.Navigation("Useraccount");
+                });
+
+            modelBuilder.Entity("SocialSyncData.Models.PostScheduler", b =>
+                {
+                    b.Navigation("UserPost");
+                });
+
+            modelBuilder.Entity("SocialSyncData.Models.Useraccount", b =>
+                {
+                    b.Navigation("SocialAccounts");
+
+                    b.Navigation("UserPosts");
                 });
 #pragma warning restore 612, 618
         }
