@@ -43,9 +43,7 @@ Follow these steps to set up and run the project locally:
 
    ```bash
    cd SocialSync-Server
-   dotnet restore
-   dotnet ef database update
-   dotnet run
+   **Navigate to the project directory:**
 
    
    
