@@ -38,12 +38,17 @@ Follow these steps to set up and run the project locally:
    **SQL Server**
    - An IDE supporting .NET development (e.g., Visual Studio, JetBrains Rider, or Visual Studio Code)
    ### Steps
-   **Navigate to the project directory:**
+   **1.Navigate to the project directory:**
    After cloning the repository, move into the project folder using the following command:
 
    ```bash
    cd SocialSync-Server
-   **Navigate to the project directory:**
+  **2.Restore dependencies:**
+
+  ```bash
+  dotnet restore
+
+
 
    
    
