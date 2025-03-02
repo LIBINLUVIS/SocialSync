@@ -3,7 +3,11 @@
   "WorkspaceRootPath": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSync\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Migrations\\20250118091524_added_column_postSchedulerTable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D96EF78E-0784-4166-8ABB-E73C62951D4B}|SocialSyncApi.csproj|c:\\users\\lesle\\onedrive\\desktop\\socialsyncv1\\socialsync\\socialsync\\socialsync-server\\socialsync\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D96EF78E-0784-4166-8ABB-E73C62951D4B}|SocialSyncApi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0721591F-4AFE-41C9-9A79-9858417738B9}|..\\SocialSyncData\\SocialSyncData.csproj|c:\\users\\lesle\\onedrive\\desktop\\socialsyncv1\\socialsync\\socialsync\\socialsync-server\\socialsyncdata\\migrations\\20250118091524_added_column_postschedulertable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0721591F-4AFE-41C9-9A79-9858417738B9}|..\\SocialSyncData\\SocialSyncData.csproj|c:\\users\\lesle\\onedrive\\desktop\\socialsyncv1\\socialsync\\socialsync\\socialsync-server\\socialsyncdata\\migrations\\20250113185155_altered_userposts_20250114.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -74,10 +78,6 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{0C43021E-B2F4-4368-9928-743CF3A7BE6B}|..\\SocialSyncBusiness\\SocialSyncBusiness.csproj|c:\\users\\lesle\\onedrive\\desktop\\socialsyncv1\\socialsync\\socialsync\\socialsync-server\\socialsyncbusiness\\hubs\\notificationhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D96EF78E-0784-4166-8ABB-E73C62951D4B}|SocialSyncApi.csproj|c:\\users\\lesle\\onedrive\\desktop\\socialsyncv1\\socialsync\\socialsync\\socialsync-server\\socialsync\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D96EF78E-0784-4166-8ABB-E73C62951D4B}|SocialSyncApi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D96EF78E-0784-4166-8ABB-E73C62951D4B}|SocialSyncApi.csproj|c:\\users\\lesle\\onedrive\\desktop\\socialsyncv1\\socialsync\\socialsync\\socialsync-server\\socialsync\\socialsyncapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -178,7 +178,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -202,7 +202,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "20250118091524_added_column_postSchedulerTable.cs",
               "DocumentMoniker": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Migrations\\20250118091524_added_column_postSchedulerTable.cs",
               "RelativeDocumentMoniker": "..\\SocialSyncData\\Migrations\\20250118091524_added_column_postSchedulerTable.cs",
@@ -215,7 +215,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "20250113185155_Altered_userposts_20250114.cs",
               "DocumentMoniker": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Migrations\\20250113185155_Altered_userposts_20250114.cs",
               "RelativeDocumentMoniker": "..\\SocialSyncData\\Migrations\\20250113185155_Altered_userposts_20250114.cs",
@@ -223,8 +223,7 @@
               "RelativeToolTip": "..\\SocialSyncData\\Migrations\\20250113185155_Altered_userposts_20250114.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABgAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-13T18:51:55.919Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-13T18:51:55.919Z"
             },
             {
               "$type": "Document",
@@ -240,7 +239,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "UserPosts.cs",
               "DocumentMoniker": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Models\\UserPosts.cs",
               "RelativeDocumentMoniker": "..\\SocialSyncData\\Models\\UserPosts.cs",
@@ -252,7 +251,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "20250111162700_Altered_table_relations_20251101.cs",
               "DocumentMoniker": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Migrations\\20250111162700_Altered_table_relations_20251101.cs",
               "RelativeDocumentMoniker": "..\\SocialSyncData\\Migrations\\20250111162700_Altered_table_relations_20251101.cs",
@@ -261,6 +260,19 @@
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-11T16:27:00.56Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSync\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSync\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAHUAAAAAAAAAAAAAAIgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T09:25:28.137Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -276,7 +288,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "SocialService.cs",
               "DocumentMoniker": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\Services\\SocialService.cs",
               "RelativeDocumentMoniker": "..\\SocialSyncBusiness\\Services\\SocialService.cs",
@@ -288,7 +300,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSync\\appsettings.Development.json",
               "RelativeDocumentMoniker": "appsettings.Development.json",
@@ -300,7 +312,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "SocialController.cs",
               "DocumentMoniker": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSync\\Controllers\\SocialController.cs",
               "RelativeDocumentMoniker": "Controllers\\SocialController.cs",
@@ -312,7 +324,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "AccountController.cs",
               "DocumentMoniker": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSync\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
@@ -324,7 +336,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "SocialSyncDataContext.cs",
               "DocumentMoniker": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Data\\SocialSyncDataContext.cs",
               "RelativeDocumentMoniker": "..\\SocialSyncData\\Data\\SocialSyncDataContext.cs",
@@ -336,7 +348,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "DataService.cs",
               "DocumentMoniker": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\Services\\DataService.cs",
               "RelativeDocumentMoniker": "..\\SocialSyncBusiness\\Services\\DataService.cs",
@@ -348,7 +360,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "20241214151522_altered_table_socialaccount.cs",
               "DocumentMoniker": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Migrations\\20241214151522_altered_table_socialaccount.cs",
               "RelativeDocumentMoniker": "..\\SocialSyncData\\Migrations\\20241214151522_altered_table_socialaccount.cs",
@@ -359,7 +371,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "SocialSyncBusiness.csproj",
               "DocumentMoniker": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\SocialSyncBusiness.csproj",
               "RelativeDocumentMoniker": "..\\SocialSyncBusiness\\SocialSyncBusiness.csproj",
@@ -371,7 +383,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "SocialAccount.cs",
               "DocumentMoniker": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Models\\SocialAccount.cs",
               "RelativeDocumentMoniker": "..\\SocialSyncData\\Models\\SocialAccount.cs",
@@ -383,7 +395,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "AccountService.cs",
               "DocumentMoniker": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\Services\\AccountService.cs",
               "RelativeDocumentMoniker": "..\\SocialSyncBusiness\\Services\\AccountService.cs",
@@ -395,7 +407,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "Forgotpassword.cs",
               "DocumentMoniker": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Models\\Forgotpassword.cs",
               "RelativeDocumentMoniker": "..\\SocialSyncData\\Models\\Forgotpassword.cs",
@@ -407,7 +419,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "Useraccount.cs",
               "DocumentMoniker": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Models\\Useraccount.cs",
               "RelativeDocumentMoniker": "..\\SocialSyncData\\Models\\Useraccount.cs",
@@ -419,7 +431,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Models\\User.cs",
               "RelativeDocumentMoniker": "..\\SocialSyncData\\Models\\User.cs",
@@ -431,7 +443,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "SendgridService.cs",
               "DocumentMoniker": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\Services\\SendgridService.cs",
               "RelativeDocumentMoniker": "..\\SocialSyncBusiness\\Services\\SendgridService.cs",
@@ -443,7 +455,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "20241214120353_Altered_table_SocialAccount.cs",
               "DocumentMoniker": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Migrations\\20241214120353_Altered_table_SocialAccount.cs",
               "RelativeDocumentMoniker": "..\\SocialSyncData\\Migrations\\20241214120353_Altered_table_SocialAccount.cs",
@@ -454,7 +466,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "20241214121327_Altered_Table_SocialAccount_20241412.cs",
               "DocumentMoniker": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Migrations\\20241214121327_Altered_Table_SocialAccount_20241412.cs",
               "RelativeDocumentMoniker": "..\\SocialSyncData\\Migrations\\20241214121327_Altered_Table_SocialAccount_20241412.cs",
@@ -465,7 +477,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "20241214115837_Added_Table_SocialAccount_and_Altered_Table_Useraccount.cs",
               "DocumentMoniker": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncData\\Migrations\\20241214115837_Added_Table_SocialAccount_and_Altered_Table_Useraccount.cs",
               "RelativeDocumentMoniker": "..\\SocialSyncData\\Migrations\\20241214115837_Added_Table_SocialAccount_and_Altered_Table_Useraccount.cs",
@@ -476,7 +488,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "NotificationHub.cs",
               "DocumentMoniker": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSyncBusiness\\Hubs\\NotificationHub.cs",
               "RelativeDocumentMoniker": "..\\SocialSyncBusiness\\Hubs\\NotificationHub.cs",
@@ -499,7 +511,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSync\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -508,18 +520,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-10-12T08:30:43.754Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSync\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\lesle\\OneDrive\\Desktop\\SocialSyncV1\\SocialSync\\SocialSync\\SocialSync-Server\\SocialSync\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAABRwBMAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T09:25:28.137Z"
             },
             {
               "$type": "Document",
